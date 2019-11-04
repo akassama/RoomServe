@@ -1,0 +1,40 @@
+/*
+Основные стили сайта
+*/
+
+//Imports
+@import 'components/core';
+
+@import 'plugins/flexboxgrid';
+@import 'plugins/pace';
+@import 'plugins/datatables';
+@import 'plugins/wysiwyg';
+@import 'plugins/scrollbar';
+@import 'plugins/swipebox';
+@import 'plugins/pincode';
+@import 'plugins/timepicker';
+@import 'plugins/multiselect';
+
+@import 'components/loader';
+@import 'components/loading';
+@import 'components/label';
+@import 'components/alert';
+@import 'components/dropdown';
+@import 'components/tabs';
+@import 'components/modal';
+@import 'components/forms';
+@import 'components/sidebar';
+@import 'components/topbar';
+@import 'components/navbar';
+@import 'components/actionbar';
+@import 'components/footer';
+@import 'components/table';
+@import 'components/modules';
+@import 'components/scrollbar';
+@import 'components/sticky-panel';
+@import 'components/list';
+@import 'components/loyalty-schemes';
+@import 'components/offers';
+@import 'components/quick-stats';
+@import 'components/analytics';
+@import 'components/timeline';

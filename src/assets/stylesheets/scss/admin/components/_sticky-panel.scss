@@ -1,0 +1,60 @@
+// Sticky panel
+.pls_sticky-panel {
+	width: 100%;
+	display: block;
+	padding: 8px 0;
+	background-color: rgba($c-warning + #111, 0.98);
+	color: $c-text !important;
+	text-align: center;
+	text-transform: uppercase;
+	box-shadow: $shadow-white-panel;
+	
+	.container-fluid {
+		@include flexbox(row wrap);
+		justify-content: flex-start;
+		align-items: center;
+
+		> * {
+			font-size: 10px;
+			font-weight: 500;
+		}
+	}
+	
+	.info + .link {
+		margin-left: auto;
+		margin-right: 0;
+
+		&::before {
+			display: none;
+		}
+		&::after {
+			display: inline-block;
+		}
+	}
+	.link {
+		margin-right: auto;
+
+		&::after,
+		&::before {
+			content: '';
+			width: 24px;
+			height: 24px;
+			display: inline-block;
+			margin-right: 8px;
+			vertical-align: middle;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 16px auto;
+			background-image: url("../../../icons/admin/others/other-sticky-arrow.svg");
+			
+		}
+		&::after {
+			display: none;
+			margin: 0 0 0 8px;
+			@include transform(rotate(180deg));
+		}
+	}
+}
+.is-sticky .pls_sticky-panel {
+	z-index: 99 !important;
+}

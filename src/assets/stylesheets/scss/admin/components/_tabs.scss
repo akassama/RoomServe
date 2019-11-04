@@ -1,0 +1,205 @@
+/*
+Стили для табов
+*/
+
+
+// Filter tab
+.pls_filter-tab {
+	width: 100%;
+	display: block;
+	letter-spacing: -0.3em;
+
+	> .nav {
+		width: 160px;
+		display: inline-block;
+		margin-right: 4px;
+		vertical-align: top;
+		letter-spacing: normal;
+		background-color: #FFF;
+		border-radius: 4px;
+		box-shadow: $shadow-white-panel;
+		
+		li {
+			&.active a {
+				color: #FFF;
+				background-color: $c-info;
+			}
+			&:first-child a {
+				border-radius: 4px 4px 0 0;
+			}
+			&:last-child a {
+				border-radius: 0 0 4px 4px;
+				border-bottom: 0;
+			}
+			&:only-child a {
+				border-radius: 4px;
+			}
+		}
+		a {
+			width: 100%;
+			display: block;
+			padding: 10px;
+			font-size: 13px;
+			font-weight: normal;
+			color: $c-text;
+			border-bottom: 1px solid $c-bg-semidark;
+
+			&:hover {
+				background-color: $c-bg;
+				color: $c-info;
+			}
+		}
+	}
+	> .tab-content {
+		width: calc(100% - 164px);
+		display: inline-block;
+		vertical-align: top;
+		letter-spacing: normal;
+		
+		.tab-pane {
+			width: 100%;
+			padding: 10px;
+			background-color: #FFF;
+			border-radius: 4px;
+			box-shadow: $shadow-white-panel;
+		}
+	}
+}
+
+
+// Side nav tab
+.pls_side-tab-wrap {
+	display: block;
+	margin-left: -8px;
+	margin-right: -8px;
+	letter-spacing: -0.3em;
+	
+	.pls_tab-nav {
+		width: calc(50% - 16px);
+		display: inline-block;
+		margin: 0 8px;
+		vertical-align: top;
+	}
+	.nav {
+		width: 100%;
+		letter-spacing: normal;
+		background-color: $c-bg;
+		border: 1px solid $c-bg-dark;
+		border-radius: 4px;
+		
+		li {
+			margin: 0 !important;
+			
+			&:first-child a {
+				border-radius: 4px 4px 0 0;
+			}
+			&:last-child a {
+				border-bottom: 0;
+				border-radius: 0 0 4px 4px;
+			}
+			&.active a {
+				color: #FFF;
+				@include linear-gradient( left, $c-info-gradient );
+
+				&::after {
+					opacity: 1;
+				}
+				&::before {
+					opacity: 1;
+					color: #FFF;
+					border-color: #FFF;
+				}
+			}
+		}
+		a {
+			width: 100%;
+			display: block;
+			position: relative;
+			padding: 16px;
+			margin-bottom: 0;
+			font-size: 13px;
+			color: $c-text;
+			background-color: transparent !important;
+			border-bottom: 1px solid $c-bg-dark;
+			
+			&::after {
+				content: "";
+			    width: 0;
+			    height: 0;
+			    display: block;
+			    position: absolute;
+			    top: calc(50% - 6px);
+			    right: -12px;
+			    z-index: 2;
+			    margin-left: -6px;
+			    border: 6px solid transparent;
+			    border-left-color: $c-info + #222;
+			    opacity: 0;
+			}
+			&:hover {
+				color: $c-info;
+			}
+			&[data-num] {
+				padding-left: 48px;
+
+				&::before {
+					content: attr(data-num);
+					width: 20px;
+					height: 20px;
+					display: block;
+					position: absolute;
+					top: calc(50% - 10px);
+					left: 16px;
+					border: 1.5px solid $c-info;
+					border-radius: 2px;
+					font-size: 12px;
+					font-weight: 500;
+					color: $c-info;
+					line-height: 16px;
+					text-align: center;
+					opacity: 0.4;
+				}
+			}
+		}
+	}
+	.tab-content {
+		width: calc(50% - 16px);
+		display: inline-block;
+		margin: 0 8px;
+		letter-spacing: normal;
+		vertical-align: top;
+	}
+	.tab-pane {
+		width: 100%;
+	}
+	.tab-pane-standart {
+		width: 100%;
+		display: block;
+		padding: 16px;
+		background-color: $c-bg;
+		border: 1px solid $c-bg-dark;
+		border-radius: 4px;
+
+		> .pls_field-wrap:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+// Phones
+@include media-breakpoint-down(sm) {
+	.pls_filter-tab {
+		width: 100%;
+		max-height: 70vh;
+		overflow-y: scroll;
+
+		.nav-stacked {
+			width: 100%;
+			margin: 0 0 4px;
+		}
+		.tab-content {
+			width: 100%;
+		}
+	}
+}

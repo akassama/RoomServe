@@ -1,0 +1,23 @@
+/*
+Стили для datepicker
+*/
+
+// Datepicker dropdown
+.datepicker-dropdown::before,
+.datepicker-dropdown::after {
+	left: 50% !important;
+}
+.datepicker-dropdown::before {
+	border-bottom-color: $c-bg;
+}
+.datepicker-dropdown.datepicker-orient-top::before,
+.datepicker-dropdown.datepicker-orient-top::after {
+	top: auto;
+  	bottom: -16px;
+  	border-bottom-color: transparent;
+  	border-top-color: $c-bg;
+}
+.datepicker-dropdown.datepicker-orient-top::after {
+  	bottom: -17px;
+  	border-top: $c-bg-dark - #111;
+}

@@ -1,0 +1,21 @@
+// Sweet alert
+.swal2-popup {
+	overflow: visible !important;
+
+	.swal2-content {
+		font-size: 16px !important;
+		font-weight: normal !important;
+		line-height: 26px !important;
+	}
+}
+.swal2-icon.swal2-question {
+	color: $c-info !important;
+	border-color: $c-info-light !important;
+}
+.swal2-buttonswrapper {
+	margin-top: 32px !important;
+
+	button {
+		margin: 0 8px;
+	}
+}

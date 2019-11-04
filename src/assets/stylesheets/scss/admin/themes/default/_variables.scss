@@ -1,0 +1,89 @@
+//Theme name
+$theme:						'default';
+
+//Theme color
+$c-theme: 					#275DF2;
+
+//Color - info
+$c-info:    				#275DF2;
+$c-info-semilight:    		#6B9DFF;
+$c-info-light:    			#F0F9FF;
+$c-info-dark:    			#303BFD;
+$c-info-rgb:				rgb(39,93,242);
+$c-info-gradient: 			$c-info, $c-info + #222;
+
+//Color - success
+$c-success:    				#66E698;
+$c-success-light:    		#F0FCF5;
+$c-success-dark:    		#39CC72;
+$c-success-rgb:				rgb(102,230,152);
+$c-success-gradient: 		$c-success, $c-success + #111;
+
+//Color - danger
+$c-danger:    				#F33C27;
+$c-danger-light:    		#FFF2EB;
+$c-danger-dark:    			#D6542B;
+$c-danger-rgb:				rgb(243,60,39);
+$c-danger-gradient: 		$c-danger, $c-danger + #222;
+
+//Color - warning
+$c-warning:    				#FFBD59;
+$c-warning-light:    		#fff4db;
+$c-warning-dark:    		#CC8D43;
+$c-warning-gradient: 		$c-warning - #111, $c-warning;
+
+
+//Color - background
+$c-bg:    					#F9FBFE;
+$c-bg-semidark:    			#F0F2FA;
+$c-bg-dark:    				#E9EBF7;
+
+//Color - text
+$c-text:    				#0A1440;
+$c-text-grey:    			#696E86;
+$c-link:    				$c-info;
+
+
+// Additional color - purple
+$c-purple:					#6f41e4;
+$c-purple-light:			#F4EFFF;
+
+
+/*
+Theme fonts
+*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic);
+$font-main: 				'Roboto', sans-serif;
+
+
+/*
+Shadows
+*/
+$shadow-white-panel:		0 2px 6px rgba(0,0,0,0.05);
+$shadow-action-button:		0 2px 12px $c-info + #666;
+$shadow-dropdown:			0 6px 24px rgba(0,0,0,0.23);
+$shadow-modal:				0 4px 48px rgba(0,0,0,0.2);
+$shadow-outline:			0 0 0 2px $c-info + #666, 0 1px 8px $c-info + #666;
+$shadow-error:				0 0 0 2px rgba($c-danger-rgb, 0.2);
+$shadow-input:				0 1px 3px rgba(0,0,0,0.1);
+
+
+/*
+Buttons
+*/
+$c-button-info: 			$c-info;
+$c-button-info-gradient: 	$c-info, $c-info + #222;
+$c-button-info-shadow:		0 2px 12px rgba($c-info + #333, 0.6);
+
+$c-button-success: 			$c-success;
+$c-button-success-gradient:	$c-success, $c-success + #222;
+$c-button-success-shadow:	0 2px 12px $c-success + #333;
+
+$c-button-danger: 			$c-danger;
+$c-button-danger-gradient:	$c-danger, $c-danger + #222;
+$c-button-danger-shadow:	0 2px 12px rgba($c-danger + #333, 0.6);
+
+
+// Other colors
+$c-input:					#eef1f5;
+$c-input-border:			$c-bg-dark;

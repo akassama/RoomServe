@@ -1,0 +1,27 @@
+<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>action-ico</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(1977 -43)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -1977 43L -1953 43L -1953 67L -1977 67L -1977 43Z" fill="#275DF2"/>
+</clipPath>
+<g id="action-ico" clip-path="url(#clip-0)">
+<g id="remove">
+<g id="Subtract">
+<use xlink:href="#path0_fill" transform="translate(-1970 51)" fill="#275DF2"/>
+</g>
+<g id="Rectangle 2">
+<use xlink:href="#path1_fill" transform="translate(-1971 48)" fill="#275DF2"/>
+</g>
+<g id="Rectangle 3">
+<use xlink:href="#path2_fill" transform="translate(-1967 47)" fill="#275DF2"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 0L 10 0L 10 10C 10 11.1046 9.10461 12 8 12L 2 12C 0.895386 12 0 11.1046 0 10L 0 0ZM 3 2.5C 3 2.22386 3.22388 2 3.5 2C 3.77612 2 4 2.22386 4 2.5L 4 8.5C 4 8.77614 3.77612 9 3.5 9C 3.22388 9 3 8.77614 3 8.5L 3 2.5ZM 6.5 2C 6.22388 2 6 2.22386 6 2.5L 6 8.5C 6 8.77614 6.22388 9 6.5 9C 6.77612 9 7 8.77614 7 8.5L 7 2.5C 7 2.22386 6.77612 2 6.5 2Z"/>
+<path id="path1_fill" d="M 0 1C 0 0.447715 0.447715 0 1 0L 11 0C 11.5523 0 12 0.447715 12 1L 12 2L 0 2L 0 1Z"/>
+<path id="path2_fill" d="M 0 1C 0 0.447715 0.447715 0 1 0L 3 0C 3.55228 0 4 0.447715 4 1L 0 1Z"/>
+</defs>
+</svg>

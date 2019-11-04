@@ -1,0 +1,45 @@
+<svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>form-pass</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-4296 138)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M 4296 -138L 4326 -138L 4326 -108L 4296 -108L 4296 -138Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="form-pass" clip-path="url(#clip-0)">
+<g id="pass">
+<g id="Rectangle">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(4303 -125)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(4303 -125)" fill="#275DF2"/>
+</g>
+</g>
+<g id="Ellipse">
+<mask id="mask1_outline_ins">
+<use xlink:href="#path2_fill" fill="white" transform="translate(4309 -121)"/>
+</mask>
+<g mask="url(#mask1_outline_ins)">
+<use xlink:href="#path3_stroke_2x" transform="translate(4309 -121)" fill="#66E698"/>
+</g>
+</g>
+<g id="Rectangle 2">
+<mask id="mask2_outline_ins">
+<use xlink:href="#path4_fill" fill="white" transform="translate(4306 -133)"/>
+</mask>
+<g mask="url(#mask2_outline_ins)">
+<use xlink:href="#path5_stroke_2x" transform="translate(4306 -133)" fill="#275DF2"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 1C 0 0.447715 0.447715 0 1 0L 15 0C 15.5523 0 16 0.447715 16 1L 16 11C 16 11.5523 15.5523 12 15 12L 1 12C 0.447715 12 0 11.5523 0 11L 0 1Z"/>
+<path id="path1_stroke_2x" d="M 1 1L 15 1L 15 -1L 1 -1L 1 1ZM 15 1L 15 11L 17 11L 17 1L 15 1ZM 15 11L 1 11L 1 13L 15 13L 15 11ZM 1 11L 1 1L -1 1L -1 11L 1 11ZM 1 11L -1 11C -1 12.1046 -0.104569 13 1 13L 1 11ZM 15 11L 15 13C 16.1046 13 17 12.1046 17 11L 15 11ZM 15 1L 17 1C 17 -0.104569 16.1046 -1 15 -1L 15 1ZM 1 -1C -0.104569 -1 -1 -0.104569 -1 1L 1 1L 1 -1Z"/>
+<path id="path2_fill" d="M 4 2C 4 3.10457 3.10457 4 2 4C 0.895431 4 0 3.10457 0 2C 0 0.895431 0.895431 0 2 0C 3.10457 0 4 0.895431 4 2Z"/>
+<path id="path3_stroke_2x" d="M 3 2C 3 2.55228 2.55228 3 2 3L 2 5C 3.65685 5 5 3.65685 5 2L 3 2ZM 2 3C 1.44772 3 1 2.55228 1 2L -1 2C -1 3.65685 0.343146 5 2 5L 2 3ZM 1 2C 1 1.44772 1.44772 1 2 1L 2 -1C 0.343146 -1 -1 0.343146 -1 2L 1 2ZM 2 1C 2.55228 1 3 1.44772 3 2L 5 2C 5 0.343146 3.65685 -1 2 -1L 2 1Z"/>
+<path id="path4_fill" d="M 0 5C 0 2.23858 2.23858 0 5 0C 7.76142 0 10 2.23858 10 5L 10 9L 0 9L 0 5Z"/>
+<path id="path5_stroke_2x" d="M 10 9L 10 10L 11 10L 11 9L 10 9ZM 0 9L -1 9L -1 10L 0 10L 0 9ZM 9 5L 9 9L 11 9L 11 5L 9 5ZM 10 8L 0 8L 0 10L 10 10L 10 8ZM 1 9L 1 5L -1 5L -1 9L 1 9ZM 5 1C 7.20914 1 9 2.79086 9 5L 11 5C 11 1.68629 8.31371 -1 5 -1L 5 1ZM 5 -1C 1.68629 -1 -1 1.68629 -1 5L 1 5C 1 2.79086 2.79086 1 5 1L 5 -1Z"/>
+</defs>
+</svg>

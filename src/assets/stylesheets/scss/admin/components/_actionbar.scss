@@ -1,0 +1,127 @@
+/*
+Стили для панели с действиями
+*/
+
+.pls_actionbar {
+	width: 100%;
+	@include flexbox(row wrap);
+	justify-content: space-between;
+	align-items: center;
+	padding: 4px;
+	margin-bottom: 16px;
+	background-color: $c-bg-semidark;
+	border-radius: 4px;
+
+	&.white {
+		padding: 8px;
+		background-color: #fff;
+		box-shadow: $shadow-white-panel;
+	}
+}
+.pls_actionbar-left {
+	@include flex(1);
+	text-align: left;
+}
+.pls_actionbar-right {
+	@include flex(1);
+	text-align: right;
+}
+.pls_actionbar-full {
+	width: 100%;
+}
+.pls_actionbar-middle {
+	width: 100%;
+	text-align: center;
+
+	.inline {
+		width: auto;
+		display: inline-block;
+	}
+}
+
+
+// Period switcher
+.pls_actionbar-period-swicher {
+	width: 100%;
+	position: relative;
+	margin-bottom: 16px;
+	text-align: center;
+
+	.pls_switcher-group {
+		text-align: center;
+		justify-content: center;
+	}
+	.pls_switcher:nth-last-of-type(1) div {
+		border-radius: 0;
+		border-right-width: 0;
+	}
+	.dropdown .pls_switcher div {
+		border-radius: 0 4px 4px 0;
+		border-right-width: 1px;
+	}
+}
+
+
+// Dependent selects
+.pls_dependent-selects {
+	@include flexbox(row wrap);
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	border-radius: 4px;
+	box-shadow: $shadow-white-panel;
+	
+	> li {
+		&:not(.text) {
+			min-width: 150px;
+			@include flex(1 0);
+		}
+		&.text {
+			padding: 0 12px;
+			background-color: $c-bg;
+			font-size: 13px;
+			font-weight: normal;
+			line-height: 34px;
+			border-width: 0 1px;
+			border-style: solid;
+			border-color: $c-bg-dark;
+		}
+		&:first-child .bootstrap-select .dropdown-toggle {
+			border-radius: 4px 0 0 4px !important;
+		}
+		&:last-child .bootstrap-select .dropdown-toggle {
+			border-radius: 0 4px 4px 0 !important;
+		}
+	}
+	.bootstrap-select {
+		width: 100%;
+
+		.dropdown-toggle {
+			border: none;
+			border-radius: 0 !important;
+		}
+	}
+}
+
+
+// Phones
+@include media-breakpoint-down(sm) {
+
+	.pls_actionbar {
+		@include flexbox(column wrap);
+	}
+	.pls_actionbar-left {
+		text-align: center;
+	}
+	.pls_actionbar-right {
+		text-align: center;
+	}
+	.pls_buttons-group {
+		justify-content: center;
+
+		li {
+			margin: 2px;
+		}
+	}
+
+}

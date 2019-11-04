@@ -1,0 +1,49 @@
+/*
+Стили для label
+*/
+
+.pls_label {
+    display: inline-block;
+    padding: 6px 8px;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 2px;
+    
+    // Empty labels collapse automatically
+    &:empty {
+        display: none;
+    }
+}
+.pls_label-grey {
+    color: $c-text-grey;
+    background-color: $c-bg-semidark;
+}
+.pls_label-black {
+    color: $c-text;
+    background-color: $c-bg-dark;
+}
+.pls_label-success {
+    color: $c-success-dark;
+    background-color: $c-success-light;
+}
+.pls_label-info {
+    color: #FFF;
+    background-color: $c-info-light;
+}
+.pls_label-warning {
+    color: $c-warning-dark;
+    background-color: $c-warning-light;
+}
+.pls_label-danger {
+    color: $c-danger;
+    background-color: $c-danger-light;
+}
+.pls_label-purple {
+    color: $c-purple;
+    background-color: $c-purple-light;
+}

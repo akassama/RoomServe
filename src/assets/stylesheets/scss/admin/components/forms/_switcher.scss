@@ -1,0 +1,87 @@
+/*
+Стили для переключателей
+*/
+
+.pls_switcher-group {
+	@include flexbox(row wrap);
+	justify-content: flex-start;
+	align-items: center;
+	
+	&.align-center {
+		justify-content: center;
+	}
+	&.fluid .pls_switcher {
+		@include flex(1);
+	}
+	&.size-middle .pls_switcher div {
+		height: 36px;
+		line-height: 36px;
+	}
+	&.pill {
+		margin-left: -2px;
+		margin-right: -2px;
+		margin-bottom: -4px;
+
+		.pls_switcher {
+			margin: 0 2px 4px;
+
+			div {
+				border-radius: 4px !important;
+				border: 1px solid $c-bg-dark;
+			}
+		}
+	}
+}
+.pls_switcher {
+	position: relative;
+	cursor: pointer;
+	margin: 0;
+	
+	&:first-of-type div {
+		border-radius: 4px 0 0 4px;
+	}
+	&:last-of-type div {
+		border-radius: 0 4px 4px 0;
+		border-right-width: 1px;
+	}
+	input {
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+
+		&:checked ~ div {
+			color: #FFF;
+			background-color: $c-info;
+		} 
+	}
+	div {
+		min-width: 80px;
+		height: 28px;
+		padding: 0 16px;
+		border: 1px solid $c-bg-dark;
+		border-right-width: 0;
+		font-size: 13px;
+		color: $c-text;
+		line-height: 28px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		text-align: center;
+		background-color: #fFF;
+	}
+	&.switcher-success input:checked ~ div {
+		background-color: $c-success;
+	}
+	&.switcher-info input:checked ~ div {
+		background-color: $c-info;
+	}
+	&.switcher-warning input:checked ~ div {
+		background-color: $c-warning;
+	}
+	&.switcher-danger input:checked ~ div {
+		background-color: $c-danger;
+	}
+}

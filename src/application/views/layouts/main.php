@@ -1,0 +1,4 @@
+layout
+<?=$current_lang?>
+<?=$language_bar?>
+<?=$content?>

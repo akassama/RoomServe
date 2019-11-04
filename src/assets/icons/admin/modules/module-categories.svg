@@ -1,0 +1,70 @@
+<svg width="90" height="90" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>module-categoris</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-422 2219)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M 422 -2219L 512 -2219L 512 -2129L 422 -2129L 422 -2219Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="module-categoris" clip-path="url(#clip-0)">
+<g id="list">
+<g id="list-item">
+<g id="Ellipse 2">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(445 -2196)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(445 -2196)" fill="#66E698"/>
+</g>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_stroke" transform="translate(459 -2192)" fill="#FFFFFF"/>
+</g>
+</g>
+<g id="list-item">
+<g id="Ellipse 2">
+<mask id="mask1_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(445 -2184)"/>
+</mask>
+<g mask="url(#mask1_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(445 -2184)" fill="#66E698"/>
+</g>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_stroke" transform="translate(459 -2180)" fill="#FFFFFF"/>
+</g>
+</g>
+<g id="list-item">
+<g id="Ellipse 2">
+<mask id="mask2_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(445 -2172)"/>
+</mask>
+<g mask="url(#mask2_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(445 -2172)" fill="#66E698"/>
+</g>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_stroke" transform="translate(459 -2168)" fill="#FFFFFF"/>
+</g>
+</g>
+<g id="list-item">
+<g id="Ellipse 2">
+<mask id="mask3_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(445 -2160)"/>
+</mask>
+<g mask="url(#mask3_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(445 -2160)" fill="#66E698"/>
+</g>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_stroke" transform="translate(459 -2156)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 8 4C 8 6.20914 6.20914 8 4 8C 1.79086 8 0 6.20914 0 4C 0 1.79086 1.79086 0 4 0C 6.20914 0 8 1.79086 8 4Z"/>
+<path id="path1_stroke_2x" d="M 6 4C 6 5.10457 5.10457 6 4 6L 4 10C 7.31371 10 10 7.31371 10 4L 6 4ZM 4 6C 2.89543 6 2 5.10457 2 4L -2 4C -2 7.31371 0.686292 10 4 10L 4 6ZM 2 4C 2 2.89543 2.89543 2 4 2L 4 -2C 0.686292 -2 -2 0.686292 -2 4L 2 4ZM 4 2C 5.10457 2 6 2.89543 6 4L 10 4C 10 0.686292 7.31371 -2 4 -2L 4 2Z"/>
+<path id="path2_stroke" d="M 0 -1C -0.552285 -1 -1 -0.552285 -1 0C -1 0.552285 -0.552285 1 0 1L 0 -1ZM 30 1C 30.5523 1 31 0.552285 31 0C 31 -0.552285 30.5523 -1 30 -1L 30 1ZM 0 1L 30 1L 30 -1L 0 -1L 0 1Z"/>
+</defs>
+</svg>

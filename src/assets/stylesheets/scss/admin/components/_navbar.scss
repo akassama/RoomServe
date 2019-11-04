@@ -1,0 +1,33 @@
+.pls_vertical-navbar {
+	width: 100%;
+	display: block;
+	margin-bottom: 16px;
+	border-radius: 8px;
+	background-color: #FFF;
+	@include box-shadow( $shadow-white-panel );
+	
+	> a {
+		width: 100%;
+		display: block;
+		padding: 12px;
+		border-bottom: 1px solid $c-bg-semidark;
+		font-size: 13px;
+		font-weight: normal;
+		color: $c-text;
+		
+		&:first-child {
+			border-radius: 8px 8px 0 0;
+		}
+		&:last-child {
+			border-radius: 0 0 8px 8px;
+			border-bottom: 0;
+		}
+		&.active {
+			background-color: $c-info;
+			color: #FFF !important;
+		}
+		&:hover {
+			color: $c-info;
+		}
+	}
+}

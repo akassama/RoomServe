@@ -1,0 +1,146 @@
+/*
+Стили для sidebar
+*/
+
+
+.pls_sidebar {
+	width: 126px;
+	height: 100%;
+	max-height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	padding-bottom: 32px;
+	border: none;
+	box-shadow: inset -5px 0px 2px -4px rgba(0,0,0,0.05);
+	@include linear-gradient( bottom, $c-info-gradient );
+	@include transform( translateX(0%) );
+	@include transform-style( preserve-3d );
+	will-change: transform;
+
+	~ .pls_main {
+		padding: 32px 0;
+		padding-left: 130px;
+
+		.pls_topbar {
+			display: none;
+		}
+	}
+}
+
+// sidebar user widget
+.pls_sidebar-user-widget {
+	display: block;
+	position: relative;
+	padding: 12px 8px;
+	text-align: center;
+}
+.pls_sidebar-user-widget-info {
+	display: block;
+	letter-spacing: -0.3em;
+	cursor: pointer;
+	text-decoration: none;
+
+	.pls_sidebar-user-widget-avatar {
+		width: 36px;
+		height: 36px;
+		display: inline-block;
+		background-color: #FFF;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		background-image: url(../../../icons/admin/placeholders/placeholder-avatar.svg);
+		border-radius: 100%;
+		vertical-align: middle;
+	}
+	.pls_sidebar-user-widget-name {
+		width: 100%;
+		display: inline-block;
+		margin-top: 8px;
+		font-size: 13px;
+		color: #FFF;
+		text-align: center;
+		line-height: normal;
+		vertical-align: middle;
+		letter-spacing: normal;
+
+		span {
+			font-size: 10px;
+			color: #FFF;
+			opacity: 0.6;
+			text-transform: uppercase;
+		}
+	}
+}
+
+
+// sidebar nav
+.pls_sidebar-nav {
+	width: 100%;
+	display: block;
+	padding: 0 0 96px;
+	margin: 0;
+	list-style: none;
+
+	li {
+		width: 100%;
+		display: block;
+
+		&.active a {
+			opacity: 1;
+			background-color: rgba(255,255,255,0.05);
+
+			&::after {
+				display: block;
+			}
+		}
+	}
+	a {
+		width: 100%;
+		display: block;
+		position: relative;
+		padding: 12px 8px;
+		font-weight: normal;
+		color: #FFF;
+		text-align: center;
+		letter-spacing: -0.3em;
+		opacity: 0.7;
+		@include modules_icons;
+		
+		&:hover {
+			opacity: 1;
+			background-color: rgba(255,255,255,0.05);
+		}
+		&::before {
+			content: '';
+			width: 100%;
+			height: 33px;
+			display: inline-block;
+			margin-bottom: 6px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 50% auto;
+			vertical-align: middle;
+		}
+		&::after {
+			content: '';
+			width: 4px;
+			height: 100%;
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: #FFF;
+			border-radius: 6px;
+		}
+		span {
+			width: 100%;
+			display: inline-block;
+			font-size: 13px;
+			vertical-align: middle;
+			letter-spacing: normal;
+			line-height: normal;
+		}
+	}
+}

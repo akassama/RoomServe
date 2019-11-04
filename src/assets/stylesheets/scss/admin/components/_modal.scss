@@ -1,0 +1,104 @@
+/*
+Стили для модалки
+*/
+
+.modal {
+	width: 100%;
+	overflow: hidden !important;
+
+	&.ajax .modal-dialog {
+		opacity: 0;
+		@include transform( scale(0.96) );
+	}
+	&.inited .modal-dialog {
+		opacity: 1;
+		@include transition-delay(0.01s);
+		@include transform( scale(1) );
+	}
+}
+.modal-content {
+	border: none;
+	border-radius: 10px;
+	background-color: #FFF;
+	box-shadow: $shadow-modal;
+}
+.modal-header {
+	position: relative;
+	z-index: 2;
+	border: none;
+	border-radius: 10px 10px 0 0;
+	background-color: $c-info;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+	.modal-title {
+		width: 100%;
+		font-size: 14px;
+		font-weight: 500;
+		color: #FFF;
+		text-transform: uppercase;
+		text-align: center;
+		letter-spacing: 1px;
+		line-height: normal;
+	}
+	.close {
+		width: 56px;
+		height: 100%;
+		position: absolute;
+		top: 2px;
+		right: 0;
+		opacity: 1;
+		outline: none;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url("../../../icons/admin/others/other-close-white.svg");
+		background-size: 20px auto;
+		cursor: pointer;
+		@include transition( all 0.2s ease-in-out );
+
+		&:hover {
+			@include transform( scale(1.2) );
+		}
+		&:active {
+			@include transform( scale(0.95) );
+			@include transition-duration(0.02s);
+		}
+	}
+}
+.modal-body {
+	padding: 0;
+	background-color: $c-bg;
+	
+	.scroll-content {
+		max-height: 70vh;
+		padding: 12px 8px !important;
+
+		&.scroll-scrolly_visible {
+			padding: 12px 16px 12px 8px !important;
+		}
+	}
+	.scroll-wrapper .scroll-element .scroll-bar {
+		background-color: $c-text-grey !important;
+	}
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+.modal-footer {
+	@include flexbox(row wrap);
+	position: relative;
+	padding: 8px 16px;
+	text-align: center;
+	border: none;
+	align-items: center;
+	justify-content: flex-end;
+	box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+	
+	.pls_button {
+		margin: 8px;
+
+		&[data-remove] {
+			margin-right: auto;
+		}
+	}
+}

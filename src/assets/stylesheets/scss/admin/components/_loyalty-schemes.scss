@@ -1,0 +1,21 @@
+.pls_loyalty-scheme-profile {
+	width: 100%;
+	display: block;
+	text-align: center;
+
+	.logo {
+		width: 120px;
+		height: 120px;
+		display: inline-block;
+		border-radius: 4px;
+		background-repeat: no-repeat;
+		background-color: $c-bg;
+		background-size: contain;
+	}
+	.name {
+		width: 100%;
+		display: block;
+		margin-top: 8px;
+		font-size: 16px;
+	}
+}

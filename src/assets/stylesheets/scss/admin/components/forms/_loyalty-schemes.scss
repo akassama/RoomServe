@@ -1,0 +1,175 @@
+/*
+Стили для Loyalty schemes
+*/
+
+
+.pls_form-loyalty-schemes {
+	display: block;
+	margin-left: -8px;
+	margin-right: -8px;
+	margin-bottom: -16px !important;
+	letter-spacing: -0.3em;
+}
+
+.pls_form-loyalty-scheme {
+	width: calc(33.3336% - 16px);
+	display: inline-block;
+	position: relative;
+	margin: 0 8px 16px;
+	cursor: pointer;
+	vertical-align: top;
+
+	input {
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+
+		&:active,
+		&:focus,
+		&:hover {
+			~ .info {
+				border-color: $c-info-light;
+				box-shadow: $shadow-outline;
+				@include transform( scale(1.05) );
+			}
+		}
+		&:active ~ .info {
+			@include transform( scale(0.95) );
+			@include transition-duration( 0.02s );
+		}
+		&:checked ~ .info {
+			border-color: $c-info-light;
+			background-color: $c-info-light;
+			box-shadow: $shadow-outline;
+			
+			&::after {
+				display: block;
+			}
+		}
+	}
+	.info {
+		width: 100%;
+		display: inline-block;
+		position: relative;
+		padding: 12px;
+		background-color: #FFF;
+		// box-shadow: $shadow-white-panel;
+		border: 2px solid $c-bg-dark;
+		border-radius: 4px;
+		font-size: 13px;
+		font-weight: 500;
+		color: $c-text;
+		text-align: center;
+		letter-spacing: normal;
+		line-height: normal;
+		@include categories_blue_icons;
+		@include transition( all 0.2s ease-in-out );
+		
+		span {
+			width: 100%;
+			display: inline-block;
+			margin-top: 4px;
+			font-size: 12px;
+			font-weight: normal;
+			color: $c-text-grey + #222;
+			text-transform: uppercase;
+		}
+		&::after {
+			content: '';
+			width: 20px;
+			height: 20px;
+			display: none;
+			position: absolute;
+			top: 8px;
+			left: 8px;
+			border-radius: 50%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: $c-info;
+			background-image: url("../../../icons/admin/form/form-checkbox-check.svg");
+		}
+	}
+	.logo {
+		width: 100%;
+		height: 100px;
+		margin-bottom: 12px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	}
+}
+
+
+//  Loyalty schemes for dashboard
+.pls_loyalty-schemes-cards {
+	margin: 0;
+	margin-top: 32px;
+	margin-left: -8px;
+	margin-right: -8px;
+	padding: 0;
+	padding-top: 24px;
+	@include flexbox(row wrap);
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	border-top: 1px solid $c-bg-dark;
+
+	.pls_title-2 {
+		margin-bottom: 16px;
+	}
+}
+.pls_loyalty-scheme-card {
+	min-width: 22%;
+	max-width: calc(25% - 16px);
+	@include flex(1 0);
+	padding: 8px;
+	margin: 8px;
+	letter-spacing: -0.3em;
+	background-color: #FFF;
+	border-radius: 4px;
+
+	.logo {
+		width: 100px;
+		display: inline-block;
+		vertical-align: middle;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		@include aspect-ratio(1.8, 1);
+	}
+	.info {
+		width: calc(100% - 100px);
+		display: inline-block;
+		padding-left: 12px;
+		vertical-align: middle;
+		letter-spacing: normal;
+	}
+	.name {
+		width: 100%;
+		display: block;
+		margin-bottom: 4px;
+		font-size: 14px;
+		font-weight: 500;
+	}
+}
+
+
+// Tablets
+@include media-breakpoint-down(md) {
+	.pls_loyalty-scheme-card {
+		min-width: 30%;
+		max-width: calc(33.333% - 16px);
+	}
+}
+
+
+// Tablets
+@include media-breakpoint-down(sm) {
+	.pls_loyalty-scheme-card {
+		min-width: 90%;
+	}
+}

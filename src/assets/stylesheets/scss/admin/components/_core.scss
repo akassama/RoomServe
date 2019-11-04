@@ -1,0 +1,93 @@
+/*
+Базовые стили
+*/
+
+@import '../../bootstrap/bootstrap';
+@import '../../bootstrap/breakpoints';
+@import '../../bourbon/bourbon';
+@import '../themes/theme';
+@import 'mixins';
+@import 'icons';
+@import 'content';
+
+@import '../plugins/datepicker';
+@import '../plugins/sweet-alert';
+
+* {
+	font-family: $font-main;
+	font-size: 13px;
+	box-sizing: border-box;
+}
+html, body {
+	background-color: $c-bg;
+	font-family: $font-main;
+	font-size: 13px;
+}
+a {
+	cursor: pointer;
+	color: $c-link;
+	text-decoration: none !important;
+	outline: none;
+
+	&:hover {
+		color: $c-link + #111;
+	}
+}
+.pls_main-wrap {
+	min-height: 99vh;
+	position: relative;
+	padding-bottom: 80px
+}
+.container-fluid {
+	max-width: 1600px;
+}
+
+
+// Tooltip
+.tooltip {
+	> .arrow {
+		border-color: rgba(10,20,64,0.8);
+	}
+	.tooltip-inner {
+		font-size: 12px;
+		background-color: rgb(10,20,64);
+	}
+}
+
+// Panels
+.pls_panels-wrap {
+	@include flexbox( row nowrap );
+	margin-left: -16px;
+	margin-right: -16px;
+	align-items: flex-start;
+
+	&.form {
+		justify-content: center;
+
+		.pls_main-panel {
+			max-width: 800px;
+			@include flex(auto 0);
+		}
+	}
+}
+.pls_side-panel {
+	min-width: 260px;
+	max-width: 260px;
+	@include flex(1 0);
+	margin: 0 16px;
+}
+.pls_main-panel {
+	width: 100%;
+	@include flex(2 0);
+	margin: 0 16px;
+}
+
+// White panel
+.pls_white-panel {
+	width: 100%;
+	display: block;
+	padding: 16px;
+	border-radius: 4px;
+	background-color: #FFF;
+	@include box-shadow( $shadow-white-panel );
+}

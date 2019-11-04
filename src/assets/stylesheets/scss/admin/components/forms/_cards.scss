@@ -1,0 +1,176 @@
+.pls_form-card-group {
+	margin-left: -8px;
+	margin-right: -8px;
+	margin-bottom: -16px !important;
+	letter-spacing: -0.3em;
+}
+
+.pls_form-card {
+	width: calc(33.333% - 16px);
+	display: inline-block;
+	margin: 0 8px 16px;
+	padding: 8px 12px 8px 8px;
+	vertical-align: top;
+	background-color: #FFF;
+	// box-shadow: $shadow-input;
+	border-radius: 8px;
+	border: 2px solid $c-bg-dark;
+	font-size: 13px;
+	color: $c-text;
+	text-align: left;
+	outline: none !important;
+	@include transition( all 0.2s ease-in-out );
+
+	&:hover {
+		color: $c-text;
+		border-color: $c-info-light;
+		box-shadow: $shadow-outline;
+		@include transform( scale(1.05) );
+	}
+	&:active {
+		@include transform( scale(0.95) );
+		@include transition-duration( 0.02s );
+	}
+	&[data-module-type="location"] .picture {
+		background-image: url(../../../icons/admin/placeholders/placeholder-location.svg);
+		background-size: 85% auto;
+	}
+	&[data-module-type="offer"] .picture {
+		background-image: url(../../../icons/admin/placeholders/placeholder-offer.svg);
+		background-size: 70% auto;
+	}
+	&.attachment {
+		width: 100%;
+		position: relative;
+		margin: 0;
+		cursor: pointer;
+
+		input {
+			width: 0;
+			height: 0;
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+		}
+		.picture {
+			background-image: url(../../../icons/admin/placeholders/placeholder-attachment.svg);
+			background-size: 70% auto;
+		}
+	}
+	&.add {
+		padding: 8px 12px;
+		text-transform: uppercase;
+		color: $c-info;
+		background-color: #FFF;
+		border: 2px dashed rgba($c-info, 0.3);
+		box-shadow: none;
+
+		&:hover {
+			border-color: $c-info-semilight;
+		}
+		[class*="ico-"] {
+			width: 32px;
+			background-color: transparent;
+			background-size: auto;
+		}
+		.ico-add {
+			background-image: url("../../../icons/admin/actions/blue/action-add.svg");
+		}
+		.ico-upload {
+			background-image: url("../../../icons/admin/actions/blue/action-upload.svg");
+		}
+		.info {
+			padding-top: 1px;
+		}
+	}
+	.picture,
+	[class*="ico-"] {
+		width: 48px;
+		height: 48px;
+		display: inline-block;
+		position: relative;
+		border-radius: 50%;
+		background-color: $c-bg;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		vertical-align: middle;
+		letter-spacing: normal;
+	}
+	.status {
+		width: 12px;
+		height: 12px;
+		position: absolute;
+		bottom: 10px;
+		right: -4px;
+		border-radius: 50%;
+		border: 2px solid #FFF;
+
+		&.status-info {
+			background-color: $c-info;
+		}
+		&.status-success {
+			background-color: $c-success;
+		}
+		&.status-danger {
+			background-color: $c-danger;
+		}
+		&.status-warning {
+			background-color: $c-warning;
+		}
+	}
+	.info {
+		width: calc(100% - 56px);
+		display: inline-block;
+		vertical-align: middle;
+		padding-left: 12px;
+		letter-spacing: normal;
+		line-height: normal;
+		text-align: left;
+	}
+	.name {
+		width: 100%;
+		display: block;
+		margin-bottom: 2px;
+	}
+	.des {
+		font-size: 11px;
+		color: $c-text-grey;
+		text-transform: uppercase;
+	}
+	.details {
+		width: 100%;
+		display: block;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			display: inline-block;
+			padding: 2px 6px;
+			margin: 2px 1px;
+			background-color: $c-info-light;
+			border-radius: 2px;
+			font-size: 12px;
+			font-weight: normal;
+			vertical-align: middle;
+			text-transform: uppercase;
+		}
+	}
+	> .pls_button {
+		width: 100%;
+		vertical-align: middle;
+		letter-spacing: normal;
+	}
+	.pls_form-card-more {
+		width: 24px;
+		height: 24px;
+		position: absolute;
+		top: calc(50% - 12px);
+		right: 8px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url(../../../icons/admin/others/other-more.svg);
+	}
+}

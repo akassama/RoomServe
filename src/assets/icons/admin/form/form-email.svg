@@ -1,0 +1,29 @@
+<svg width="30" height="30" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>form-email</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-4296 190)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M 4296 -190L 4326 -190L 4326 -160L 4296 -160L 4296 -190Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="form-email" clip-path="url(#clip-0)">
+<g id="email">
+<g id="Vector">
+<use xlink:href="#path0_stroke" transform="translate(4302 -181)" fill="#66E698"/>
+</g>
+<g id="Rectangle">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path1_fill" fill="white" transform="translate(4301 -182)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path2_stroke_2x" transform="translate(4301 -182)" fill="#275DF2"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_stroke" d="M 9 7L 8.69303 7.39468L 9 7.63343L 9.30697 7.39468L 9 7ZM -0.30697 0.394676L 8.69303 7.39468L 9.30697 6.60532L 0.30697 -0.394676L -0.30697 0.394676ZM 9.30697 7.39468L 18.307 0.394676L 17.693 -0.394676L 8.69303 6.60532L 9.30697 7.39468Z"/>
+<path id="path1_fill" d="M 0 1C 0 0.447715 0.447715 0 1 0L 19 0C 19.5523 0 20 0.447715 20 1L 20 13C 20 13.5523 19.5523 14 19 14L 1 14C 0.447715 14 0 13.5523 0 13L 0 1Z"/>
+<path id="path2_stroke_2x" d="M 1 1L 19 1L 19 -1L 1 -1L 1 1ZM 19 1L 19 13L 21 13L 21 1L 19 1ZM 19 13L 1 13L 1 15L 19 15L 19 13ZM 1 13L 1 1L -1 1L -1 13L 1 13ZM 1 13L -1 13C -1 14.1046 -0.104569 15 1 15L 1 13ZM 19 13L 19 15C 20.1046 15 21 14.1046 21 13L 19 13ZM 19 1L 21 1C 21 -0.104569 20.1046 -1 19 -1L 19 1ZM 1 -1C -0.104569 -1 -1 -0.104569 -1 1L 1 1L 1 -1Z"/>
+</defs>
+</svg>

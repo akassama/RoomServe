@@ -1,0 +1,33 @@
+<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>action-ico</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(1977 -43)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -1977 43L -1953 43L -1953 67L -1977 67L -1977 43Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="action-ico" clip-path="url(#clip-0)">
+<g id="preview">
+<g id="Rectangle">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(-1975 47)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(-1975 47)" fill="#FFFFFF"/>
+</g>
+</g>
+<g id="Rectangle 2">
+<use xlink:href="#path2_fill" transform="translate(-1973 49)" fill="#FFFFFF" fill-opacity="0.3"/>
+</g>
+<g id="Rectangle 3">
+<use xlink:href="#path3_fill" transform="translate(-1968 61)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 1C 0 0.447715 0.447715 0 1 0L 19 0C 19.5523 0 20 0.447715 20 1L 20 12C 20 12.5523 19.5523 13 19 13L 1 13C 0.447715 13 0 12.5523 0 12L 0 1Z"/>
+<path id="path1_stroke_2x" d="M 1 1L 19 1L 19 -1L 1 -1L 1 1ZM 19 1L 19 12L 21 12L 21 1L 19 1ZM 19 12L 1 12L 1 14L 19 14L 19 12ZM 1 12L 1 1L -1 1L -1 12L 1 12ZM 1 12L -1 12C -1 13.1046 -0.104569 14 1 14L 1 12ZM 19 12L 19 14C 20.1046 14 21 13.1046 21 12L 19 12ZM 19 1L 21 1C 21 -0.104569 20.1046 -1 19 -1L 19 1ZM 1 -1C -0.104569 -1 -1 -0.104569 -1 1L 1 1L 1 -1Z"/>
+<path id="path2_fill" d="M 0 0L 16 0L 16 9L 0 9L 0 0Z"/>
+<path id="path3_fill" d="M 2 0L 4 0L 6 2L 0 2L 2 0Z"/>
+</defs>
+</svg>

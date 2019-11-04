@@ -1,0 +1,40 @@
+/*
+Стили для alert
+*/
+
+.pls_alert {
+    width: 100%;
+    display: block;
+    padding: 16px 16px;
+    margin-bottom: 24px;
+    border-radius: 6px;
+    background-color: #FFF;
+}
+.pls_label-grey {
+    color: $c-text-grey;
+    background-color: $c-bg-semidark;
+}
+.pls_label-black {
+    color: $c-text;
+    background-color: $c-bg-dark;
+}
+.pls_label-success {
+    color: $c-success-dark;
+    background-color: $c-success-light;
+}
+.pls_label-info {
+    color: $c-info;
+    background-color: $c-info-light;
+}
+.pls_label-warning {
+    color: $c-warning-dark;
+    background-color: $c-warning-light;
+}
+.pls_label-danger {
+    color: $c-danger;
+    background-color: $c-danger-light;
+}
+.pls_label-purple {
+    color: $c-purple;
+    background-color: $c-purple-light;
+}

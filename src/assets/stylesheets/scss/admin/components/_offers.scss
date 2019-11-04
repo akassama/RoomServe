@@ -1,0 +1,84 @@
+.pls_offer-approve {
+	width: 100%;
+	display: block;
+	padding: 32px 16px;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: $shadow-white-panel;
+
+	.name {
+		width: 100%;
+		display: block;
+		font-size: 22px;
+		font-weight: lighter;
+		color: $c-text;
+	}
+	.details {
+		display: block;
+		padding: 0;
+		margin-top: 8px;
+		margin-left: -4px;
+		margin-right: -4px;
+		list-style: none;
+
+		li {
+			display: inline-block;
+			padding: 6px 12px;
+			margin: 4px;
+			background-color: $c-bg;
+			border-radius: 4px;
+			vertical-align: top;
+			font-size: 12px;
+			color: $c-text;
+			text-transform: uppercase;
+			
+			&.yellow {
+				background-color: $c-warning-light;
+			}
+			&.green {
+				background-color: $c-success-light;
+
+				strong {
+					color: $c-success-dark;
+				}
+			}
+		}
+		strong {
+			font-weight: 500;
+		}
+	}
+	.text {
+		width: 100%;
+		display: block;
+		margin-top: 12px;
+		font-size: 14px;
+		color: $c-text-grey;
+		line-height: 22px;
+	}
+
+	.venue-card {
+		@include flexbox(row wrap);
+		vertical-align: middle;
+		justify-content: center;
+		align-items: center;
+
+		.logo {
+			width: 48px;
+			height: 48px;
+			display: inline-block;
+			vertical-align: middle;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			border-radius: 4px;
+		}
+		.name {
+			width: auto;
+			display: inline-block;
+			padding-left: 24px;
+			vertical-align: middle;
+			letter-spacing: normal;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="toolbar-close-white" class="cls-1" d="M4611.64,1904.99l11.8-11.8a1.881,1.881,0,0,0-2.66-2.66l-11.79,11.81-11.79-11.81a1.881,1.881,0,0,0-2.66,2.66l11.8,11.8-11.8,11.81a1.877,1.877,0,0,0,2.66,2.65l11.79-11.8,11.79,11.8a1.877,1.877,0,0,0,2.66-2.65Z" transform="translate(-4594 -1890)"/>
+</svg>

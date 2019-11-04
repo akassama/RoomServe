@@ -1,0 +1,256 @@
+input[data-uploader='true'] {
+	opacity: 0;
+}
+.pls_uploader-wrap {
+	width: 100%;
+	height: 140px;
+	display: block;
+	position: relative;
+	background-color: #FFF;
+	border: 2px dashed rgba($c-info-rgb, 0.3);
+	border-radius: 4px;
+	text-align: center;
+	@include transition( all 0.2s ease-in-out );
+	
+	&:hover {
+		border-color: $c-info-semilight;
+	}
+
+	// size
+	&.medium {
+		height: 170px;
+	}
+	&.min {
+		height: 78px;
+
+		.pls_uploader-label::before {
+			top: 4px;
+			background-size: 40px;
+		}
+		.pls_uploader-button {
+			width: calc(100% + 4px);
+			bottom: -2px;
+			margin-left: -2px;
+		}
+		.pls_button {
+			width: 100%;
+			height: 24px;
+			line-height: 24px;
+			padding: 0 8px;
+			border-radius: 0 0 4px 4px;
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+	&.square {
+		max-width: 400px;
+		height: auto;
+		@include aspect-ratio(1, 1);;
+	}
+
+	// upload & uploaded
+	&.upload,
+	&.uploaded {
+		.pls_uploader-label {
+			display: none;
+		}
+		.pls_uploader-bg,
+		.pls_uploader-progress {
+			display: block;
+		}
+	}
+	&.uploaded {
+		.pls_uploader-bg {
+			@include filter(blur(0));
+			cursor: zoom-in;
+		}
+		.pls_uploader-progress {
+			display: none;
+		}
+		.pls_uploader-remove {
+			display: inline-block;
+		}
+		.pls_uploader-download {
+			display: inline-block;
+		}
+	}
+	.pls_uploader-remove {
+		display: none;
+		margin-top: 8px;
+	}
+	.pls_uploader-download {
+		display: none;
+		margin-top: 8px;
+	}
+	.pls_label-error {
+		width: 100%;
+		text-align: center;
+		top: 0%;
+		bottom: auto;
+		left: 0;
+	}
+}
+
+.pls_uploader-label {
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	
+	&::before {
+		content: '';
+		width: 100%;
+		height: calc(100% - 32px);
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 64px;
+		background-image: url("../../../icons/admin/others/other-photo-uploader.svg");
+	}
+	input {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+		cursor: pointer;
+	}
+}
+
+.pls_uploader-button {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 12px;
+	text-align: center;
+
+	&.download {
+		bottom: 46px;
+	}
+}
+
+.pls_uploader-bg {
+	width: calc(100% - 16px);
+	height: calc(100% - 16px);
+	display: none;
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	@include filter(blur(4px));
+	@include transition(blur 0.6s ease-in-out);
+
+	&.file {
+		cursor: default !important;
+
+		&::before {
+			content: '';
+			width: 80px;
+			height: 80px;
+			position: absolute;
+			top: calc(36% - 40px);
+			left: calc(50% - 40px);
+			border-radius: 100%;
+			background-color: $c-info;
+		}
+		&::after {
+			content: '';
+			width: 80px;
+			height: 80px;
+			position: absolute;
+			top: calc(36% - 40px);
+			left: calc(50% - 40px);
+			border-radius: 100%;
+			background-size: 40px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-image: url("../../../icons/admin/others/other-file-uploader.svg");
+		}
+	}
+}
+
+
+// Progress
+.pls_uploader-progress {
+	width: 80%;
+	height: 10px;
+	display: none;
+	position: absolute;
+	top: calc(50% - 6px);
+	left: 10%;
+	z-index: 10;
+	padding: 2px;
+	background-color: #FFF;
+	border-radius: 5px;
+
+	div {
+		height: 6px;
+		border-radius: 4px;
+		background-color: $c-info;
+		@include transition( width 0.6s ease-in-out );
+	}
+}
+
+
+// Type attachment
+.pls_attachment-uploader-wrap {
+	width: 100%;
+	display: block;
+	position: relative;
+
+	&.uploaded > label {
+		display: none;
+	}
+}
+
+
+// Attachments
+.pls_attachments {
+	padding: 0;
+	margin: 0;
+	margin-left: -8px;
+	margin-right: -8px;
+	margin-bottom: -16px;
+	list-style: none;
+	letter-spacing: -0.3em;
+}
+.pls_attachment {
+	width: calc(33.333% - 16px);
+	display: inline-block;
+	margin: 0 8px 16px;
+	letter-spacing: normal;
+	// @include flex(1 0);
+
+	.pls_uploader-label::before {
+		background-image: url("../../../icons/admin/others/other-file-uploader.svg");
+	}
+}
+
+
+// Tablets
+@include media-breakpoint-down(sm) {
+
+	.pls_uploader-wrap {
+		width: 100%;
+		height: 64px;
+		display: block;
+		position: relative;
+
+		// size
+		&.min {
+			height: 120px;
+		}
+	}
+
+}

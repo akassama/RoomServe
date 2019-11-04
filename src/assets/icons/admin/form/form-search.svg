@@ -1,0 +1,29 @@
+<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ico</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-3274 -598)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M 3274 598L 3298 598L 3298 622L 3274 622L 3274 598Z" fill="#275DF2"/>
+</clipPath>
+<g id="ico" clip-path="url(#clip-0)">
+<g id="search">
+<g id="Ellipse">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(3279 603)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(3279 603)" fill="#275DF2"/>
+</g>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_stroke" transform="translate(3288 613)" fill="#275DF2"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 12 6C 12 9.31371 9.31371 12 6 12C 2.68629 12 0 9.31371 0 6C 0 2.68629 2.68629 0 6 0C 9.31371 0 12 2.68629 12 6Z"/>
+<path id="path1_stroke_2x" d="M 10 6C 10 8.20914 8.20914 10 6 10L 6 14C 10.4183 14 14 10.4183 14 6L 10 6ZM 6 10C 3.79086 10 2 8.20914 2 6L -2 6C -2 10.4183 1.58172 14 6 14L 6 10ZM 2 6C 2 3.79086 3.79086 2 6 2L 6 -2C 1.58172 -2 -2 1.58172 -2 6L 2 6ZM 6 2C 8.20914 2 10 3.79086 10 6L 14 6C 14 1.58172 10.4183 -2 6 -2L 6 2Z"/>
+<path id="path2_stroke" d="M 0.707107 -0.707107C 0.316583 -1.09763 -0.316583 -1.09763 -0.707107 -0.707107C -1.09763 -0.316583 -1.09763 0.316583 -0.707107 0.707107L 0.707107 -0.707107ZM 3.29289 4.70711C 3.68342 5.09763 4.31658 5.09763 4.70711 4.70711C 5.09763 4.31658 5.09763 3.68342 4.70711 3.29289L 3.29289 4.70711ZM -0.707107 0.707107L 3.29289 4.70711L 4.70711 3.29289L 0.707107 -0.707107L -0.707107 0.707107Z"/>
+</defs>
+</svg>

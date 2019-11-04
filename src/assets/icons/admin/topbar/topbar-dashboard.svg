@@ -1,0 +1,49 @@
+<svg width="36" height="36" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>topbar-dashboard</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(2090 481)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -2090 -481L -2054 -481L -2054 -445L -2090 -445L -2090 -481Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="topbar-dashboard" clip-path="url(#clip-0)">
+<g id="dashboard">
+<g id="Rectangle">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(-2081 -462)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(-2081 -462)" fill="#FFFFFF"/>
+</g>
+</g>
+<g id="Rectangle">
+<mask id="mask1_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(-2071 -462)"/>
+</mask>
+<g mask="url(#mask1_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(-2071 -462)" fill="#FFFFFF"/>
+</g>
+</g>
+<g id="Rectangle">
+<mask id="mask2_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(-2071 -472)"/>
+</mask>
+<g mask="url(#mask2_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(-2071 -472)" fill="#66E698"/>
+</g>
+</g>
+<g id="Rectangle">
+<mask id="mask3_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(-2081 -472)"/>
+</mask>
+<g mask="url(#mask3_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(-2081 -472)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 1C 0 0.447715 0.447715 0 1 0L 7 0C 7.55228 0 8 0.447715 8 1L 8 7C 8 7.55228 7.55228 8 7 8L 1 8C 0.447715 8 0 7.55228 0 7L 0 1Z"/>
+<path id="path1_stroke_2x" d="M 1 1L 7 1L 7 -1L 1 -1L 1 1ZM 7 1L 7 7L 9 7L 9 1L 7 1ZM 7 7L 1 7L 1 9L 7 9L 7 7ZM 1 7L 1 1L -1 1L -1 7L 1 7ZM 1 7L -1 7C -1 8.10457 -0.104569 9 1 9L 1 7ZM 7 7L 7 9C 8.10457 9 9 8.10457 9 7L 7 7ZM 7 1L 9 1C 9 -0.104569 8.10457 -1 7 -1L 7 1ZM 1 -1C -0.104569 -1 -1 -0.104569 -1 1L 1 1L 1 -1Z"/>
+</defs>
+</svg>

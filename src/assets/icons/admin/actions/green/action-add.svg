@@ -1,0 +1,17 @@
+<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>action-ico</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(1977 -43)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -1977 43L -1953 43L -1953 67L -1977 67L -1977 43Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="action-ico" clip-path="url(#clip-0)">
+<g id="add">
+<use xlink:href="#path0_stroke" transform="translate(-1971 49)" fill="#66E698"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_stroke" d="M 7 0C 7 -0.552285 6.55228 -1 6 -1C 5.44772 -1 5 -0.552285 5 0L 7 0ZM 5 12C 5 12.5523 5.44772 13 6 13C 6.55228 13 7 12.5523 7 12L 5 12ZM 12 7C 12.5523 7 13 6.55228 13 6C 13 5.44772 12.5523 5 12 5L 12 7ZM 0 5C -0.552285 5 -1 5.44772 -1 6C -1 6.55228 -0.552285 7 0 7L 0 5ZM 5 0L 5 12L 7 12L 7 0L 5 0ZM 12 5L 0 5L 0 7L 12 7L 12 5Z"/>
+</defs>
+</svg>

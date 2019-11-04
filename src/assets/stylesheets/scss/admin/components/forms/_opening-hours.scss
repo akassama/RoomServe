@@ -1,0 +1,75 @@
+/*
+Opening hours
+*/
+
+
+.pls_opening-hours-wrap {
+	width: 100%;
+	display: block;
+	padding: 0;
+	list-style: none;
+}
+.pls_opening-hours {
+	width: 100%;
+	display: block;
+	padding: 8px;
+	margin-bottom: 8px;
+	border: 1px solid $c-bg-semidark;
+	border-radius: 4px;
+	letter-spacing: -0.3em;
+	
+	&.active {
+		.closed {
+			display: none;
+		}
+		.hours {
+			display: block;
+		}
+	}
+	.pls_checkbox {
+		width: 40%;
+		display: inline-block;
+		vertical-align: middle;
+		letter-spacing: -0.3em;
+	}
+	.right {
+		width: 60%;
+		display: inline-block;
+		text-align: right;
+
+		.pls_input {
+			padding: 2px 5px;
+			text-align: center;
+		}
+	}
+	.closed {
+		width: calc(50% - 4px);
+		height: 28px;
+		display: inline-block;
+		line-height: 28px;
+		background-color: $c-bg-semidark;
+		border-radius: 4px;
+		letter-spacing: normal;
+		text-align: center;
+		color: $c-text-grey;
+	}
+	.hours {
+		display: none;
+	}
+	.pls_field {
+		width: calc(50% - 6px);
+		display: inline-block;
+		vertical-align: middle;
+		letter-spacing: normal;
+	}
+	.line {
+		width: 12px;
+		display: inline-block;
+		padding-right: 2px;
+		vertical-align: middle;
+		font-size: 13px;
+		color: $c-text;
+		text-align: center;
+		line-height: normal;
+	}
+}

@@ -1,0 +1,231 @@
+/*
+Стили для таблиц
+*/
+
+// Table
+.pls_table  {
+	width: 100% !important;
+
+	tbody tr {
+		@include transition( all 0.2s ease-in-out );
+
+		&:hover {
+			background-color: #fff;
+			box-shadow: 0 0 32px rgba(0,0,0,0.07);
+		}
+	}
+	td, th {
+		padding: 8px 8px;
+		border-bottom: 1px solid $c-bg-semidark;
+		outline: none;
+		text-align: left;
+
+		&.actions {
+			text-align: right;
+		}
+		&.actions .dropdown {
+			position: relative;
+
+			> .dropdown-menu {
+				margin: 10px 0 0 0;
+			}
+		}
+	}
+	th {
+		padding: 14px 8px;
+		font-weight: 500;
+		color: $c-text-grey;
+
+		&::before, &::after {
+			height: 18px;
+			top: calc(50% - 9px);
+			bottom: auto;
+			font-weight: normal;
+			color: $c-info;
+			display: none !important;
+		}
+	}
+}
+
+
+// Table - empty data
+.pls_table-empty {
+	width: 100%;
+	max-width: 300px;
+	display: none;
+	margin: 24px auto;
+	text-align: center;
+
+	.pls_table-empty-ico {
+		width: 90px;
+		height: 90px;
+		display: inline-block;
+		position: relative;
+		margin-bottom: 16px;
+		border-radius: 100%;
+		box-shadow: $shadow-white-panel;
+		@include linear-gradient(bottom, $c-info-gradient);
+		@include modules_icons;
+
+		&::before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		&::after {
+			content: '';
+			width: 116%;
+			height: 116%;
+			position: absolute;
+			top: -8%;
+			left: -8%;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: auto 100%;
+			background-image: url(../../../icons/admin/modules/module-bg.svg);
+		}
+	}
+	.pls_table-empty-text {
+		width: 100%;
+		display: block;
+		margin-bottom: 24px;
+		font-size: 18px;
+		font-weight: lighter;
+		color: $c-text;
+	}
+}
+[data-table-hide="true"] {
+	display: none !important;
+}
+[data-table-hide] {
+	opacity: 0;
+}
+
+
+// Table photo
+.pls_table_photo {
+	width: 48px;
+	height: 48px;
+	display: block;
+	background-color: $c-bg;
+	background-image: url(../../../icons/admin/placeholders/placeholder-default.svg);
+	background-size: contain !important;
+	background-repeat: no-repeat;
+	background-position: bottom;
+
+	border-radius: 4px;
+
+	&[style*="background-image"] {
+		background-position: center;
+		background-size: cover;
+	}
+	&.avatar {
+		background-size: 94% auto;
+		background-image: url(../../../icons/admin/placeholders/placeholder-avatar.svg);
+	}
+}
+
+
+// Datatable settings
+.dataTables_wrapper {
+	margin: 0;
+	padding: 0;
+	font-size: 13px;
+	color: $c-text;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: $shadow-white-panel;
+}
+.dataTables_empty {
+	padding: 24px 16px !important;
+	font-size: 14px;
+	font-weight: lighter;
+	color: $c-text-grey;
+	text-transform: uppercase;
+}
+.dataTables_info {
+	display: none;
+}
+
+.dataTables_paginate ul {
+	width: 100%;
+	display: block;
+	padding: 12px 4px;
+	margin: 0 !important;
+	list-style: none;
+	text-align: center;
+	white-space: normal !important;
+
+	li {
+		display: inline-block;
+		margin: 2px;
+
+		&.active a {
+			font-weight: 500;
+			color: $c-info;
+			border-color: $c-info;
+		}
+		&.disabled {
+			opacity: 0.3;
+		}
+		&.previous a,
+		&.next a {
+			width: auto;
+		}
+	}
+	a {
+		width: 34px;
+		height: 34px;
+		display: block;
+		padding: 8px;
+		font-size: 13px;
+		font-weight: 500;
+		color: $c-text-grey;
+		outline: none;
+		line-height: normal;
+		border-radius: 40px;
+		border: 2px solid transparent;
+		@include transition( all 0.2s ease-in-out );
+
+		&:hover {
+			color: $c-info;
+		}
+	}
+}
+.dataTables_scrollHead thead th {
+	&.sorting_desc, &.sorting_asc {
+		color: $c-info;
+
+		&::before,
+		&::after {
+			display: block !important;
+		}
+	}
+}
+.dataTables_scrollBody {
+	overflow: initial !important;
+}
+
+
+
+// Tablets
+@include media-breakpoint-down(md) {
+
+	.pls_table-wrap {
+		overflow-x: scroll;
+
+		.dataTables_wrapper  {
+			min-width: 1200px;
+		}
+	}
+	#pls_filter {
+		display: none;
+	}
+
+}

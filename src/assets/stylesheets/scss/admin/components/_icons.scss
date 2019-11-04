@@ -1,0 +1,85 @@
+// Modules icons
+$modules_icons: "default" "dashboard" "venues" "offers" "partners" "visitors" "redemptions" "analytics" "reports" "administrators" "settings" "categories" "tags" "packages" "analytics-venues" "analytics-offers" "analytics-redemptions";
+@mixin modules_icons {
+	@each $ico in $modules_icons {
+		&.#{$ico}::before {
+			background-image: url("../../../icons/admin/modules/module-#{$ico}.svg");
+		}
+	}
+}
+
+
+// Categories icons
+$categories_icons: "food" "fitness" "hotels" "leisure" "service" "fashion" "automotive" "online-purchases" "insurance";
+@mixin categories_white_icons {
+	@each $ico in $categories_icons {
+		&.cat-#{$ico}::before {
+			background-image: url("../../../icons/admin/categories/white/cat-#{$ico}.svg");
+		}
+	}
+}
+
+@mixin categories_blue_icons {
+	@each $ico in $categories_icons {
+		&.cat-#{$ico}::before {
+			background-image: url("../../../icons/admin/categories/blue/cat-#{$ico}.svg");
+		}
+	}
+}
+
+
+// Buttons icons
+$buttons_icons: "add" "check" "filter" "view" "export" "remove" "preview" "upload" "cancel";
+@mixin buttons_icons {
+	@each $ico in $buttons_icons {
+		&.ico-color-blue.ico-#{$ico}::before {
+			background-image: url("../../../icons/admin/actions/blue/action-#{$ico}.svg");
+		}
+	    &.ico-color-white.ico-#{$ico}::before {
+			background-image: url("../../../icons/admin/actions/white/action-#{$ico}.svg");
+		}
+		&.ico-color-red.ico-#{$ico}::before {
+			background-image: url("../../../icons/admin/actions/red/action-#{$ico}.svg");
+		}
+		&.ico-color-green.ico-#{$ico}::before,
+		&.ico-#{$ico}::before {
+			background-image: url("../../../icons/admin/actions/green/action-#{$ico}.svg");
+		}
+	}
+	&.ico-search::before {
+		background-image: url("../../../icons/admin/others/other-search.svg");
+	}
+}
+
+
+// Input icons
+$input_icons: "email" "password" "search" "date";
+@mixin input_icons {
+	@each $ico in $input_icons {
+		&.ico-#{$ico} {
+			background-image: url("../../../icons/admin/form/form-#{$ico}.svg");
+		}
+	}
+}
+
+
+// Errors icons
+$errors_icons: "not-found" "access-denied" "code";
+@mixin errors_icons {
+	@each $ico in $errors_icons {
+		&.error-#{$ico}::before {
+			background-image: url("../../../icons/admin/errors/error-#{$ico}.svg");
+		}
+	}
+}
+
+
+// Flags
+$flags: "en" "ru" "de" "ae" "uz";
+@mixin flags {
+	@each $flag in $flags {
+		&.flag-#{$flag}::before {
+			background-image: url("../../../icons/admin/flags/#{$flag}.svg");
+		}
+	}
+}

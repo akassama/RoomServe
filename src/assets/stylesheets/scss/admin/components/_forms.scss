@@ -1,0 +1,321 @@
+/*
+Стили формы
+*/
+
+@import 'forms/input';
+@import 'forms/select';
+@import 'forms/datepicker';
+@import 'forms/checkbox';
+@import 'forms/switcher';
+@import 'forms/button';
+@import 'forms/uploader';
+@import 'forms/categories';
+@import 'forms/cards';
+@import 'forms/languages';
+@import 'forms/map-picker';
+@import 'forms/opening-hours';
+@import 'forms/approve';
+@import 'forms/loyalty-schemes';
+
+.pls_form-wrap {
+	width: 100%;
+	max-width: 800px;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+}
+
+.pls_form-wrap-header {
+	width: 100%;
+	margin-bottom: 12px;
+	padding: 12px 20px;
+	letter-spacing: -0.4em;
+	background-color: $c-info;
+	border-radius: 8px 8px;
+	
+	&.approved {
+		background-color: $c-success;
+
+		.icon {
+			background-image: url(../../../icons/admin/status/status-approved.svg);
+		}
+	}
+	&.pending {
+		background-color: $c-warning;
+
+		.icon {
+			background-image: url(../../../icons/admin/status/status-pending.svg);
+		}
+	}
+	.icon {
+		width: 40px;
+		height: 40px;
+		display: inline-block;
+		margin-right: 20px;
+		vertical-align: middle;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		& + .info {
+			width: calc(100% - 60px);
+		} 
+	}
+	.info {
+		width: 100%;
+		display: inline-block;
+		color: #FFF;
+		vertical-align: middle;
+		letter-spacing: normal;
+	}
+	.title {
+		width: 100%;
+		display: block;
+		font-size: 22px;
+		font-weight: lighter;
+	}
+	.desc {
+		width: 100%;
+		display: block;
+		font-size: 13px;
+		font-weight: normal;
+	}
+}
+
+
+.pls_form-group {
+	width: 100%;
+	display: block;
+	padding: 16px;
+	margin-bottom: 12px;
+	background-color: #FFF;
+	border-radius: 8px;
+	box-shadow: $shadow-white-panel;
+	
+	&:last-child,
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+.pls_form-sub-group {
+	width: 100%;
+	display: block;
+	position: relative;
+	padding: 12px 12px 0;
+	margin-top: 16px;
+	border: 1px solid $c-bg-semidark;
+	border-radius: 4px;
+
+	&.no-arrow {
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+	&::before,
+	&::after {
+		content: "";
+	    width: 0;
+	    height: 0;
+	    display: block;
+	    position: absolute;
+	    top: -16px;
+	    left: 16px;
+	    z-index: 2;
+	    border: 8px solid transparent;
+	    border-bottom-color: #FFF;
+	}
+	&::after {
+		top: -17px;
+	    z-index: 1;
+	    border-bottom-color: $c-bg-semidark;
+	}
+}
+.pls_form-message {
+	width: 100%;
+	max-width: 800px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	
+	&.size-full {
+		max-width: 100%;
+	}
+	ul {
+		display: block;
+		margin: 0;
+
+		li {
+			width: 100%;
+			padding: 8px 0;
+			text-align: left;
+		}
+	}
+}
+.pls_form-row {
+	margin-left: -20px;
+	margin-right: -20px;
+}
+.pls_form-divider {
+	width: 100%;
+	height: 1px;
+	margin: 24px 0;
+	border: none;
+	background-color: $c-bg-semidark;
+	display: none;
+}
+
+.pls_field-wrap {
+	width: 100%;
+	display: block;
+	position: relative;
+	margin-bottom: 14px;
+}
+.pls_field {
+	width: 100%;
+	display: block;
+	position: relative;
+
+	&.with-button .pls_button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		border-radius: 0 4px 4px 0;
+	}
+	&.redeem-field-pin {
+		width: auto;
+		display: inline-block;
+	}
+}
+
+// label
+.pls_field-label {
+	width: 100%;
+	display: block;
+	position: relative;
+	margin-bottom: 2px;
+	font-size: 13px;
+	font-weight: 500;
+	color: $c-text-grey + #111;
+	text-align: left;
+	letter-spacing: normal;
+
+	&.required::before {
+		content: '*';
+		width: 3px;
+		height: 3px;
+		position: absolute;
+		top: 2px;
+		left: -8px;
+		font-size: 12px;
+		font-weight: bold;
+		color: $c-danger;
+	}
+	& + .pls_field-desc {
+		margin-top: 4px;
+	}
+}
+
+// description
+.pls_field-desc {
+	display: block;
+	font-size: 12px;
+	padding: 1px 8px;
+	margin-top: 12px;
+	margin-bottom: 10px;
+	color: $c-text-grey + #111;
+	line-height: normal;
+	letter-spacing: normal;
+	border-left: 4px solid $c-warning;
+
+	&:empty {
+		display: none;
+	}
+}
+
+// error label
+.pls_label-error {
+	position: absolute;
+	bottom: 100%;
+	right: 0;
+	padding: 2px 8px;
+	margin-bottom: 6px;
+	background-color: $c-danger;
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: normal;
+	color: #FFF;
+	line-height: normal;
+	opacity: 0.9;
+	letter-spacing: normal;
+	text-transform: none;
+
+	a {
+		color: #FFF !important;
+	}
+}
+
+.pls_form-status {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	@include transform(translate(-50%, -50%));
+}
+
+
+// Form buttons group
+.pls_form-buttons {
+	max-width: 808px;
+	margin: 0 auto;
+	margin-top: 24px;
+	@include flexbox(row wrap);
+	align-items: center;
+	justify-content: flex-end;
+	
+	&.full {
+		width: 100%;
+		max-width: 100%;
+	}
+	.pls_button {
+		margin: 0 4px 8px;
+		
+		&[data-submit] {
+			min-width: 100px;
+		}
+		&[data-remove] {
+			margin-right: auto;
+		}
+		&.to-left {
+			margin-right: auto;
+		}
+	}
+}
+
+
+// Decline message
+.pls_form-decline-message {
+	width: 100%;
+	max-width: 800px;
+	display: block;
+	position: relative;
+	padding: 16px;
+	margin: 0 auto 24px;
+	background-color: $c-danger-light;
+	border: 1px solid $c-danger;
+	border-radius: 4px;
+
+	.title {
+		padding: 0;
+		margin: 0 0 8px;
+		font-size: 16px;
+		font-weight: 500;
+		color: $c-text;
+	}
+}
+
+
+// Phones
+@include media-breakpoint-down(xs) {
+	.pls_form-wrap {
+		padding: 16px;
+	}
+}

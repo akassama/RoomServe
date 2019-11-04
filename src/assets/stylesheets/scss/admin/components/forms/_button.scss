@@ -1,0 +1,308 @@
+/*
+Стили для кнопок
+*/
+
+// Button
+.pls_button {
+	height: 36px;
+	display: inline-block;
+	position: relative;
+	padding: 0 20px;
+	color: #FFF;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 36px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	letter-spacing: normal;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	box-shadow: $shadow-white-panel;
+	outline: none;
+	@include transition( all 0.2s ease-in-out );
+	
+	&:hover {
+		@include transform( scale(1.1) );
+	}
+	&:active {
+		@include transform( scale(0.95) );
+		@include transition-duration( 0.02s );
+	}
+	&.color-white {
+		color: $c-text;
+		background-color: #fff;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $c-text !important;
+			box-shadow: $shadow-outline;
+		}
+		&.active {
+			color: #FFF !important;
+			background-color: $c-info;
+		}
+	}
+	&.color-grey {
+		color: $c-text;
+		background-color: $c-bg-semidark;
+		box-shadow: none;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $c-text !important;
+			box-shadow: $shadow-outline;
+		}
+	}
+	&.color-info {
+		background-color: $c-button-info;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #FFF !important;
+			box-shadow: $c-button-info-shadow;
+		}
+	}
+	&.color-success {
+		background-color: $c-button-success;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #FFF !important;
+			box-shadow: $c-button-success-shadow;
+		}
+	}
+	&.color-danger {
+		background-color: $c-button-danger;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #FFF !important;
+			box-shadow: $c-button-danger-shadow;
+		}
+	}
+	
+	&.size-full {
+		width: 100%;
+	}
+	&.size-slim {
+		height: 28px;
+		padding: 0 12px;
+		font-size: 10px;
+		font-weight: 500;
+		text-transform: uppercase;
+		line-height: 28px;
+	}
+
+	&.with-caret {
+		padding-right: 34px;
+
+		&::after {
+			content: '';
+			width: 24px;
+			height: 24px;
+			position: absolute;
+			top: calc(50% - 12px);
+			right: 8px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-image: url('../../../icons/admin/others/other-arrow-down.svg');
+
+		}
+	}
+
+	&[class*="ico-"],
+	&[class*="flag-"] {
+		padding-left: 42px;
+		@include buttons_icons;
+
+		&::before {
+			content: '';
+			width: 24px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 10px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		&.no-text {
+			padding-left: 24px;
+			font-size: 0;
+			line-height: normal;
+			vertical-align: middle;
+		}
+	}
+	&[class*="flag-"] {
+		@include flags;
+		text-transform: capitalize;
+
+		&::before {
+			width: 20px;
+		}
+	}
+
+}
+
+// Back button
+.pls_back-button {
+	height: 36px;
+	display: block;
+	font-size: 13px;
+	font-weight: normal;
+	color: $c-text;
+	text-align: left;
+	@include transition( all 0.2s ease-in-out );
+	
+	&:hover::before {
+		@include transform( translateX(-6px) );
+	}
+	&::before {
+		content: '';
+		width: 30px;
+		height: 100%;
+		display: inline-block;
+		margin-right: 12px;
+		vertical-align: middle;
+		background-repeat: no-repeat;
+		background-position: center left;
+		background-image: url("../../../icons/admin/others/other-back.svg");
+		@include transition( all 0.2s ease-in-out );
+	}
+	span {
+		font-weight: normal;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+.open .with-caret::after {
+	@include transform( rotate(180deg) );
+}
+
+
+// Buttons group
+.pls_buttons-group {
+	padding: 0;
+	margin: 0;
+	@include flexbox(row wrap);
+	justify-content: flex-start;
+	align-items: center;
+	list-style: none;
+
+	&.type-tab {
+		> li {
+			margin: 0;
+			
+			&:first-child > .pls_button {
+				border-radius: 4px 0 0 4px;
+			}
+			&:last-child > .pls_button {
+				border-radius: 0 4px 4px 0;
+			}
+			> .pls_button {
+				border-radius: 0;
+			}
+		}
+	}
+	> li {
+		margin-right: 4px;
+
+		> .pls_button {
+			display: block;
+		}
+		&.active .pls_button.color-white {
+			color: #FFF !important;
+			background-color: $c-info;
+		}
+		&.isolate {
+			margin-right: 16px;
+		}
+	}
+	&.right {
+		justify-content: flex-end;
+
+		> li {
+			margin-right: 0;
+			margin-left: 4px;
+
+			&.isolate {
+				margin-left: 16px;
+			}
+		}
+	}
+	&.center {
+		justify-content: center;
+
+		> li {
+			margin-right: 4px;
+			margin-left: 4px;
+		}
+	}
+}
+
+
+// Filter buttons group
+.pls_filter-buttons {
+	@include flexbox(row wrap);
+	justify-content: center;
+	align-items: center;
+	margin-left: -8px;
+	margin-right: -8px;
+	margin-top: 8px;
+	margin-bottom: 4px;
+	letter-spacing: -0.3em;
+
+	> .pls_button {
+		@include flex(1 0);
+		margin: 0 8px;
+	}
+}
+
+
+// Actions button
+.open > .pls_actions-button::before {
+	@include transform( rotate(-180deg) );
+}
+.pls_actions-button {
+	display: inline-block;
+	position: relative;
+	padding: 6px 20px 6px 10px;
+	font-size: 10px;
+	font-weight: normal;
+	color: #FFF !important;
+	text-transform: uppercase;
+	border-radius: 4px;
+	background-color: $c-info;
+	@include transition( all 0.2s ease-in-out );
+
+	&::before {
+		content: '';
+		width: 8px;
+		height: 8px;
+		display: block;
+		position: absolute;
+		top: calc(50% - 4px);
+		right: 6px;
+		margin-left: 8px;
+		border: none;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url("../../../icons/admin/others/other-arrow-down-white.svg");
+		background-repeat: no-repeat;
+		@include transition( all 0.2s ease-in-out );
+	}
+	&:hover {
+		color: #FFF !important;
+		box-shadow: $shadow-action-button;
+		@include transform( scale(1.1) );
+	}
+	&:active {
+		@include transform( scale(0.95) );
+		@include transition-duration( 0.02s );
+	}
+}

@@ -1,0 +1,133 @@
+/*
+Модули
+*/
+
+.pls_modules {
+	@include flexbox(row wrap);
+	justify-content: flex-start;
+	align-items: center;
+	margin-left: -8px;
+	margin-right: -8px;
+}
+
+.pls_module {
+	width: calc(25% - 16px);
+	min-height: 240px;
+	display: block;
+	padding: 24px 16px;
+	margin: 0 8px 16px;
+	background-color: #FFF;
+	box-shadow: $shadow-white-panel;
+	border-radius: 4px;
+	text-align: center;
+	@include transition( all 0.2s ease-in-out );
+
+	&:hover,
+	&:active,
+	&:focus {
+		box-shadow: $shadow-outline;
+		@include transform( scale(1.02) );
+	}
+	&:active {
+		@include transform( scale(0.95) );
+		@include transition-duration( 0.02s );
+	}
+}
+
+// module icons
+.pls_module-ico {
+	width: 90px;
+	height: 90px;
+	display: inline-block;
+	position: relative;
+	@include modules_icons;
+
+	&::before {
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	&::after {
+		content: '';
+		width: 116%;
+		height: 116%;
+		position: absolute;
+		top: -8%;
+		left: -8%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: auto 100%;
+		background-image: url(../../../icons/admin/modules/module-bg.svg);
+	}
+}
+
+// module name
+.pls_module-name {
+	width: 100%;
+	display: block;
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight: 400;
+	color: $c-text;
+}
+
+// module descriptions
+.pls_module-des {
+	width: 100%;
+	display: block;
+	margin-top: 8px;
+	font-size: 13px;
+	color: $c-text-grey;
+}
+
+
+// Tablets
+@include media-breakpoint-down(md) {
+
+	.pls_module {
+		width: calc(33.333% - 16px);
+	}
+
+}
+
+
+// Phones
+@include media-breakpoint-down(sm) {
+
+	.pls_module {
+		width: calc(50% - 16px);
+	}
+
+}
+
+// Phones
+@include media-breakpoint-down(xs) {
+
+	.pls_module-ico {
+		width: 78px;
+		height: 78px;
+
+		&::before {
+			background-size: 90%;
+		}
+	}
+	.pls_module {
+		width: calc(100% - 16px);
+		padding: 16px;
+		min-height: 220px;
+	}
+	.pls_module-name  {
+		margin-top: 16px;
+		font-size: 16px;
+	}
+	.pls_module-des {
+		margin-top: 4px;
+	}
+
+}

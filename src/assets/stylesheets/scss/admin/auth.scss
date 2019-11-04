@@ -1,0 +1,59 @@
+/*
+Стили для страницы авторизации, регистрации и восстановления пароля
+*/
+
+//Imports
+@import 'components/core';
+@import 'components/forms';
+@import 'components/dropdown';
+
+html {
+	min-height: 100%;
+}
+body {
+	min-height: 90vh;
+	@include flexbox(column nowrap);
+	justify-content: center;
+	align-items: center;
+}
+
+.pls_auth-page {
+	@include flexbox(column nowrap);
+	justify-content: center;
+	align-items: center;
+}
+.pls_auth-logo {
+	width: auto;
+	height: auto;
+	max-height: 100px;
+	display: block;
+	margin: 10px auto 32px;
+}
+.pls_auth-panel {
+	width: 100%;
+	max-width: 320px;
+	margin: 0 auto 32px;
+	display: block;
+}
+.pls_auth-link {
+	display: inline-block;
+	color: $c-text-grey;
+	margin-top: 16px;
+
+	&.blue {
+		color: $c-info;
+	}
+}
+.pls_construction-text {
+	width: 100%;
+	max-width: 600px;
+	display: block;
+	position: relative;
+	padding: 0 16px;
+	margin: 0 auto 4%;
+	font-size: 2.4rem;
+	font-weight: lighter;
+	color: $c-text;
+	text-align: center;
+	line-height: normal;
+}

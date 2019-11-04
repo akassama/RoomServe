@@ -1,0 +1,184 @@
+/*
+Верхняя панель
+*/
+
+.pls_topbar {
+	width: 100%;
+	display: block;
+	margin-bottom: 24px;
+	background-color: #fff;
+	box-shadow: $shadow-white-panel;
+
+	> .container-fluid {
+		height: 130px;
+		@include flexbox(row nowrap);
+		justify-content: space-around;
+		align-items: center;
+	}
+}
+.pls_topbar-left {
+	@include flex(2);
+	text-align: left;
+}
+.pls_topbar-center {
+	@include flex(1);
+	text-align: center;
+}
+.pls_topbar-right {
+	@include flex(2);
+	text-align: right
+}
+
+
+// Topbar - Partner logo
+.pls_topbar-partner-logo {
+	width: 100%;
+	height: 80px;
+	display: block;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	font-size: 14px;
+	color: $c-text;
+	text-transform: uppercase;
+
+	&[style*="background-image"] {
+		font-size: 0;
+	}
+}
+
+// Topbar - User widget
+.pls_user-widget {
+	text-align: right;
+
+	&.open .pls_user-widget-info::after {
+		@include transform( rotate(180deg) );
+	}
+}
+.pls_user-widget-info {
+	@include flexbox(row nowrap);
+	justify-content: flex-end;
+	align-items: center;
+	cursor: pointer;
+	text-decoration: none;
+
+	&::after {
+		content: '';
+		width: 8px;
+		height: 8px;
+		display: block;
+		margin-left: 8px;
+		border: none;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url("../../../icons/admin/others/other-arrow-down.svg");
+	}
+	.pls_user-widget-avatar {
+		width: 36px;
+		height: 36px;
+		display: block;
+		background-color: $c-bg;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		background-image: url(../../../icons/admin/placeholders/placeholder-avatar.svg);
+		border-radius: 100%;
+	}
+	.pls_user-widget-name {
+		display: block;
+		margin-right: 12px;
+		font-size: 13px;
+		color: $c-text;
+		text-align: right;
+		line-height: normal;
+
+		span {
+			font-size: 10px;
+			color: $c-text-grey;
+			text-transform: uppercase;
+		}
+	}
+}
+.pls_user-widget-menu {
+	&::before,
+	&::after {
+		right: 24px !important;
+	}
+}
+
+
+// Topbar - Actionbar
+.pls_topbar-actionbar {
+	@include flexbox(row wrap);
+	justify-content: flex-start;
+	align-items: center;
+	text-align: left;
+
+	> a {
+		@include flexbox(row wrap);
+		justify-content: flex-start;
+		align-items: center;
+		text-decoration: none;
+
+		span {
+			display: inline-block;
+			padding-left: 12px;
+			vertical-align: middle;
+			font-size: 13px;
+			color: $c-text;
+		}
+	}
+}
+.pls_topbar-action {
+	width: 36px;
+	height: 36px;
+	display: block;
+	position: relative;
+	border-radius: 100%;
+	box-shadow: $shadow-white-panel;
+	background-color: $c-info;
+	@include transition( all 0.2s ease-in-out );
+	
+	&:hover,
+	&:active,
+	&:focus {
+		box-shadow: $c-button-info-shadow;
+		@include transform( scale(1.1) );
+	}
+	&:active {
+		@include transition-duration(0.02s);
+		@include transform( scale(0.95) );
+	}
+	&::before {
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-repeat: no-repeat;
+		background-position: center;
+		@include transition( all 0.2s ease-in-out );
+	}
+	&.dashboard::before {
+		background-image: url("../../../icons/admin/topbar/topbar-dashboard.svg");
+	}
+}
+
+
+// Phones
+@include media-breakpoint-down(sm) {
+	.pls_topbar .container-fluid {
+		height: 64px;
+	}
+	.pls_topbar-actionbar > a span {
+		display: none;
+	}
+	.pls_topbar-center {
+		display: none;
+	}
+
+	.pls_user-widget-info .pls_user-widget-name span {
+		display: none;
+	}
+}

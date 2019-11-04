@@ -1,0 +1,37 @@
+.pls_footer {
+	width: 100%;
+	display: block;
+	position: absolute;
+	bottom: 32px;
+	left: 0;
+	margin-top: 24px;
+	font-size: 13px;
+	opacity: 0.7;
+	color: $c-text-grey;
+
+	> div {
+		@include flexbox(row wrap);
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	.footer-link {
+		margin-right: auto;
+		color: $c-text-grey;
+	}
+	.footer-copyright {
+		@include flex(1 0);
+		text-align: right;
+
+		.text {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		img {
+			height: 20px;
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 6px;
+		}
+	}
+}
