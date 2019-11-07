@@ -40,8 +40,9 @@ class Users_model extends PLS_model
      * @param array $data User data
      * @return bool Indicates user is created successfully or not.
      */
-    function save($data)
+    function save($data, $test = false)
     {
+
         if (isset($data['date_of_birth'])) {
             $data['date_of_birth'] = date('Y-m-d', strtotime($data['date_of_birth']));
         }
@@ -52,11 +53,16 @@ class Users_model extends PLS_model
             }
         }
         else {
-            $data = $this->pls_crud_lib->created($this->table, $data);
+            //$data = $this->pls_crud_lib->created($this->table, $data);
             if($this->db->insert($this->table, $data)){
                 $result = $this->db->insert_id();
             }
         }
+
+        if($test){
+            return $result;
+        }
+
         return $result;
     }
 

@@ -72,7 +72,7 @@ class Orders_model extends Partner_Model
      * @param array $data User data
      * @return bool Indicates user is created successfully or not.
      */
-    function save($data)
+    function save($data, $test = test)
     {
         if (isset($data['order_id'])) {
             $data['order_date'] = date('Y-m-d', strtotime($data['order_date']));
@@ -80,10 +80,14 @@ class Orders_model extends Partner_Model
             $result = $this->db->update($this->table, $data, 'order_id = '.$data['order_id']);
         }
         else {
-            $data = $this->pls_crud_lib->created($this->table, $data);
+            //$data = $this->pls_crud_lib->created($this->table, $data);
             if($this->db->insert($this->table, $data)){
                 $result = $user_id = $this->db->insert_id();
             }
+        }
+
+        if($test){
+            return $result;
         }
         return $result;
     }

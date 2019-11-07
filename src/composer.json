@@ -11,8 +11,9 @@
 		"source": "https://github.com/bcit-ci/CodeIgniter"
 	},
 	"require": {
-		"php": ">=5.3.7",
-		"hashids/hashids": "^2.0"
+		"php": ">=5.4",
+		"hashids/hashids": "^2.0",
+		"phpunit/phpunit": "4.8.31"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
@@ -25,5 +26,8 @@
 	    { 
 	    	"packagist": false 
 		}
-	]
+	],
+	"require-dev": {
+		"kenjis/ci-phpunit-test": "^0.17.0"
+	}
 }
