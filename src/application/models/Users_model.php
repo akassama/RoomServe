@@ -169,4 +169,60 @@ class Users_model extends PLS_model
         }
         return TRUE;
     }
+
+    /**
+     * Count all users in db
+     */
+    public function get_grid_count($options)
+    {
+        $options = $this->_list_options($options);
+
+        return $this->count_all($options);
+    }
+
+    /**
+     * Grid list criteria
+     */
+    private function _list_options($options)
+    {
+        $options['where']['pls_users.status !='] = STATUS_DRAFT;
+        $options['where']['pls_users.is_deleted'] = 0;
+
+        $options['join'][] = [
+            'table' => 'pls_users_groups_rel',
+            'where' => 'pls_users_groups_rel.user_id = pls_users.user_id',
+            'type' => 'left'
+        ];
+
+        $options['group_by'] = isset($options['group_by'])?$options['group_by']:['pls_users.user_id'];
+
+        return $options;
+    }
+
+    /**
+     * Get admin list based on criteria
+     */
+    public function get_grid_list($options)
+    {
+        $options = $this->_list_options($options);
+        $options['as_array'] = TRUE;
+
+
+        $options['join'][] = [
+            'table' => 'pls_users_groups',
+            'where' => 'pls_users_groups.user_group_id = pls_users_groups_rel.user_group_id',
+            'type' => 'left'
+        ];
+
+        $result = $this->get_list($options);
+        if ($result) {
+            foreach ($result as $key => $item) {
+                if (isset($result[$key]['photo']) && $result[$key]['photo']) {
+                    $result[$key]['photo'] = encrypt_file_url($result[$key]['photo']);
+                }
+            }
+        }
+        return $result;
+    }
+
 }

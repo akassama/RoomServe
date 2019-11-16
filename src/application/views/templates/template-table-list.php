@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-	<!-- Titlebar -->
+	<!-- Titlebar! -->
 	<h1 class="pls_title-1">
 		<? if ( isset($data['back_url']) ) : ?>
 			<!-- back button -->
@@ -11,6 +11,10 @@
 
 		<!-- page title -->
 		<span><?=$data['page_title']?></span><!-- /page title -->
+
+        <div class="pls_form-message">
+            <?=flash_messages()?>
+        </div><!-- /form message -->
 
 		<!-- action buttons -->
 		<ul class="pls_buttons-group right">

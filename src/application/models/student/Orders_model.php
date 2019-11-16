@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Orders_model extends Partner_Model
+class Orders_model extends PLS_Model
 {
     public function __construct()
     {
@@ -72,22 +72,20 @@ class Orders_model extends Partner_Model
      * @param array $data User data
      * @return bool Indicates user is created successfully or not.
      */
-    function save($data, $test = test)
+    function save($data)
     {
         if (isset($data['order_id'])) {
-            $data['order_date'] = date('Y-m-d', strtotime($data['order_date']));
+            if(isset($data['order_date'])){
+                $data['order_date'] = date('Y-m-d', strtotime($data['order_date']));
+            }
             $data = $this->pls_crud_lib->updated($this->table, $data);
             $result = $this->db->update($this->table, $data, 'order_id = '.$data['order_id']);
         }
         else {
-            //$data = $this->pls_crud_lib->created($this->table, $data);
+            $data = $this->pls_crud_lib->created($this->table, $data);
             if($this->db->insert($this->table, $data)){
                 $result = $user_id = $this->db->insert_id();
             }
-        }
-
-        if($test){
-            return $result;
         }
         return $result;
     }

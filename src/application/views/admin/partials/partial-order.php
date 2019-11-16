@@ -4,7 +4,7 @@ if ($approve) {
 }
 ?>
 
-<!-- Form wrap -->
+<!-- Form wrap !-->
 <div class="pls_form-wrap <?=$approve?'pls_disabled':''?>">
 
 	<!-- panel header -->

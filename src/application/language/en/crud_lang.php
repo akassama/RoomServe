@@ -77,6 +77,21 @@ $lang['order_saved_with_inactive_status']  = 'Due to partner deactivation, the o
 $lang['order_deactivate_success'] = 'Order is successfully deactivated';
 $lang['order_deactivate_denied'] = '"{{Order_name}}" cannot be activated, please activate the Partner "{{Partner_name}}" first.';
 
+$lang['email_theme_update'] = 'Your order has been updated!';
+$lang['email_theme_decline'] = 'Your order has been declined!';
+$lang['email_theme_approve'] = 'Your order has been approved!';
+$lang['email_theme_delete'] = 'Your order has been deleted!';
+$lang['email_theme_deactivate'] = 'Your order has been deactivated!';
+$lang['email_theme_cancel'] = 'Your order has been canceled!';
+$lang['email_message_update'] = 'Your order has been updated by admin! Check changing!';
+$lang['email_message_decline'] = 'Your order has been declined by admin! Check changing!';
+$lang['email_message_approve'] = 'Your order has been approved by admin! Check changing!';;
+$lang['email_message_delete'] = 'Your order has been deleted by admin! Check changing!';
+$lang['email_message_deactivate'] = 'Your order has been deactivated by admin! Check changing!';
+$lang['email_message_cancel'] = 'Your order has been canceled by admin! Check changing!';
+
+
+$lang['email_message_reason'] = 'Reason for decline: ';
 /*
 |--------------------------------------------------------------------------
 | Status changes messages

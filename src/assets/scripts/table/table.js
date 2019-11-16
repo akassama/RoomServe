@@ -438,6 +438,7 @@ function table_init(options, table, columns, columnDefs, url, module, activePres
 
 	pls_datatable = table.DataTable({
 		"columns": 			columns,
+		"actions":			"Delete",
 		"columnDefs": 		columnDefs,
 		"order": 			[[order, order_dir]],
         "processing": 		true,

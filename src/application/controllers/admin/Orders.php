@@ -7,8 +7,11 @@ class Orders extends Admin_Controller
     {
 		
         parent::__construct();
-		//Load Orders model
+        $this->load->library('email');
+
+        //Load Orders model
         $this->load->model('admin/Orders_model', 'orders_model');
+        $this->load->model('Users_model', 'users_model');
         $this->load->model('admin/Cleaning_options_model', 'cleaning_options_model');
         $this->load->model('Messages_model', 'messages_model');
 		$this->load->model('Common_Orders_model', 'common_orders_model');
@@ -51,6 +54,7 @@ class Orders extends Admin_Controller
 		}
 
         $this->pls_layout_lib->admin_layout('/templates/template-table-list', $data);
+
     }
 
 
@@ -70,7 +74,9 @@ class Orders extends Admin_Controller
 
     /**
      * Updates order
+     * Edit Order Use Case
      */
+
     public function update($id = NULL, $lang = NULL) {
         //checking if order sended to approve
         if($this->orders_model->pending_approval($id)){
@@ -97,7 +103,8 @@ class Orders extends Admin_Controller
 					if ($this->orders_model->save($order_data) && $this->orders_model->save_translation($order_trans_data)) {
 						log_activity($id, NULL, $new_data);
 						$this->handle_other_order_operations($id, $post, $order_data, $new_data);
-						$json['message'] = ajax_messages('success', $new_data?lang('order_create_success'):lang('order_update_success'));
+                        $json['message'] = ajax_messages('success', $new_data?lang('order_create_success'):lang('order_update_success'));
+                        $this->send_email($data['data'], lang('email_theme_update'), lang('email_message_update'));
                     }
                     else {
                         $json['message'] = ajax_messages('error', $new_data?lang('order_create_failed'):lang('order_update_failed'));
@@ -121,6 +128,7 @@ class Orders extends Admin_Controller
 
     /**
      * Delete order
+     * Delete Order Use Case
      */
     public function delete($order_id)
     {
@@ -129,25 +137,33 @@ class Orders extends Admin_Controller
 	        if ($order = $this->orders_model->load($order_id)) {
 	            $data['order_id'] = $order->order_id;
 	            $data = $this->pls_crud_lib->deleted('pls_orders', $data);
+
 	            if ($this->orders_model->save($data)) {
 					log_activity($order_id);
 	                $json['message'] = ajax_messages('success', lang('order_delete_success'));
-					$json['redirect'] = '/admin/orders';
 	                $json['success'] = TRUE;
-	            } else {
+                    $json['redirect'] = create_url("/orders");
+                    $this->send_email($order, lang('email_theme_delete'), lang('email_message_delete'));
+
+                } else {
 	                $json['message'] = ajax_messages('error', lang('order_delete_failed'));
 	            }
 	        }
-	        echo json_encode($json);
-		}
-		else {
-			show_404();
-		}
+            if ($this->input->get('redirect')) {
+                $json['redirect'] = create_url('/orders');
+            }
+            echo json_encode($json);
+        }
+        else {
+            redirect(create_url('/orders'));
+        }
     }
+
 
 
     /**
      * Approve order
+     * Accept Order Use Case
      */
     public function approve($id = NULL, $lang = NULL)
 	{
@@ -174,7 +190,8 @@ class Orders extends Admin_Controller
 						log_activity($id);
 						$this->handle_other_order_operations($id, $post, $order_data, FALSE);
 					    $json['message'] = ajax_messages('success', lang('order_update_success'));
-                        $json['redirect'] = '/admin/orders';
+                        $json['redirect'] = create_url("/orders");
+                        $this->send_email($data['draft_data'], lang('email_theme_approve'), lang('email_message_approve'));
                     }
                     else {
                         $json['message'] = ajax_messages('error', lang('order_update_failed'));
@@ -198,6 +215,7 @@ class Orders extends Admin_Controller
 
     /**
      * Ajax decline order
+     * Decline Order Use Case
      */
     public function decline(){
         if($this->input->is_ajax_request()){
@@ -212,7 +230,8 @@ class Orders extends Admin_Controller
 					log_activity($form['id']);
                     $this->messages_model->save_message($form['id'], TYPE_VENUE, $form['message'], 'decline');
                     $json['status'] = TRUE;
-                    $json['redirect'] = '/admin/orders';
+                    $this->send_email($this->orders_model->load($form['id']), lang('email_theme_decline'), lang('email_message_decline') . lang('email_message_reason') . $form['message']);
+                    $json['redirect'] = create_url("/orders");
                 }
 
             }
@@ -223,13 +242,14 @@ class Orders extends Admin_Controller
 
 	/**
 	 * deactivate order
-	 */
+     * Deactivate Order Use Case
+     */
 	public function deactivate($order_id)
 	{
 		if ($this->input->is_ajax_request() ) {
 			$order = $this->orders_model->load($order_id, $this->lang->default_lang);
 			$order_data['order_id'] = $order_id;
-			$order_data['partner_id'] = $order->partner_id;
+			//$order_data['student_id'] = $order->student_id;
 			$action = 'deactivate';
 			if ($order->status == ORDER_STATUS_INACTIVE) {
 				$order_data['status'] = ORDER_STATUS_APPROVED;
@@ -242,11 +262,15 @@ class Orders extends Admin_Controller
 			if($this->orders_model->save($order_data)) {
 				log_activity($order_id, $action);
 				if ($order->status == $order_data['status']) {
-					$partner = $this->partners_model->load($order->partner_id);
-					$json['message'] = ajax_messages('warning', str_replace(['{{Order_name}}', '{{Partner_name}}'], [$order->name, $partner->name], lang('order_deactivate_denied')), FALSE);
-				}
+					//$partner = $this->partners_model->load($order->student_id);
+					$json['message'] = ajax_messages('warning', str_replace(['{{Order_name}}'], [$order->name], lang('order_deactivate_denied')), FALSE);
+
+
+
+                }
 				else {
 					$json['message'] = ajax_messages('success', lang('order_deactivate_success'), FALSE);
+                    $this->send_email($order, lang('email_theme_deactivate'), lang('email_message_deactivate'));
 				}
 			}
 			echo json_encode($json);
@@ -259,6 +283,7 @@ class Orders extends Admin_Controller
 
 	/**
 	* Cancel order
+     * Cancel Order Use Case
 	*/
 	public function cancel($order_id)
 	{
@@ -275,9 +300,10 @@ class Orders extends Admin_Controller
 				if ($form['message']) {
 					$this->messages_model->save_message($form['id'], 'order', $form['message'], 'cancel');
 				}
-				$json['message'] = '';
+                $this->send_email($order, lang('email_theme_cancel'), lang('email_message_cancel') . lang('email_message_reason') . $form['message']);
+                $json['message'] = '';
 				$json['success'] = TRUE;
-				$json['redirect'] = "/admin/orders";
+                $json['redirect'] = create_url("/orders");
 			}
 			echo json_encode($json);
 		}
@@ -285,6 +311,23 @@ class Orders extends Admin_Controller
 			show_404();
 		}
 	}
+
+    /**
+     * Cancel order
+     * Send Notification Use Case
+     */
+	public function send_email($order, $theme, $message){
+	    $student_id = $order->student_id;
+        $user = $this->users_model->load($student_id);
+        $user_email = $user->email;
+
+        $this->email->from(getenv('EMAIL_USER'));
+        $this->email->to($user_email);
+
+        $this->email->subject($theme);
+        $this->email->message($message);
+        $this->email->send();
+    }
 
 
     /*
