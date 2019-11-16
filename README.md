@@ -22,24 +22,31 @@ The application must contain:
 The development of the application will be through the use of the following technologies:
     • MySQL
     • PHP
- 
- 
+
+
 # Instructions to install Roomservice web application
 
 Info:
 This is Codeigniter based framework, written in PHP
 
 Prerequisites:
-- Mysql server
-- Local PHP server (Openserver or Xampp)
+- MySQL Server
+- Local PHP server (Openserver or Xampp/MAMP(for Mac)) 
+- PHP v5.6 
+- SMTP (Gmail or Mailtrap)
 
 1. Create Mysql database with name "roomservice"
-2. Find the "database.sql" file inside database folder and import that file to recently created roomservice database
-3. Default user for mysql server is "root", password is empty, if you need to change these, you can edit "env.development" file
-4. If you have Openserver, create domain "room.lc" and put all folders and files inside Roomservice folder into domain folder
-5. Check url "room.lc" from browser, that's all!
-6. If any problems, write to @bzimor_inno via telegram or check Codeigniter online documentation: https://codeigniter.com/user_guide/installation/index.html
-7. You can check the working prototype via "http://roomservice.asranov.uz/"
+2. Find the "roomservice.sql" file inside database folder and import that file to recently created roomservice database
+3.  Edit "env.development" file 
+4. Default user for mysql server is "root", password is empty, if you need to change these, you can edit "env.development" file) 
+5. Default settings for email are empty, you need to change them, you need to add in "env.development" file: EMAIL_HOST, EMAIL_USER, EMAIL_PASS, EMAIL_PORT, EMAIL_CRYPTO.
+6. Install Composer dependencies "composer install"
+7. If you have Openserver, create domain "room.lc" and put all folders and files inside Roomservice folder into domain folder
+8. Check url "room.lc" from browser, that's all!
+
+If any problems, write to @bzimor_inno via telegram or check Codeigniter online documentation: https://codeigniter.com/user_guide/installation/index.html
+
+You can check the working prototype via "http://roomservice.asranov.uz/"
 
 Admin user:
 email: admin@roomservice.com
