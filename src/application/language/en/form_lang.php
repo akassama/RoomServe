@@ -15,6 +15,8 @@ $lang["form_btn_back"]  					= "Back";
 $lang["form_btn_back_to_module"]  			= "Back to ";
 $lang["form_btn_back_to_dashboard"]  		= "Back to Dashboard";
 $lang["form_btn_active"]          			= "Active";
+$lang["form_btn_admin"]        			    = "Admin";
+$lang["form_btn_user"]          			= "User";
 $lang["form_btn_inactive"]        			= "Inactive";
 $lang["form_btn_change_password"] 			= "Change password";
 $lang["form_btn_change_redeem_pin"]			= "Change redeem pin";
@@ -52,6 +54,7 @@ $lang["form_btn_approve_cancellation"]	    = "Approve cancellation";
 |--------------------------------------------------------------------------
 */
 $lang["form_status"]                     = "Status";
+$lang["form_role"]                       = "Role";
 $lang["form_group"]                      = "Group";
 $lang["form_email"]                      = "Email";
 $lang["form_password"]                   = "Password";

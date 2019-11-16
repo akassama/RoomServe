@@ -94,18 +94,18 @@ function order_student_grid_columns()
                 "keys"              => ['draft_order_id'],
                 "has_access"        => "",
             ],
-            // [
-            //     "title"             => lang('table_btn_delete'),
-            //     "link"              => create_partner_url('/orders/delete/{{draft_order_id}}'),
-            //     "class"             => "ico-delete dropdown-divider",
-            //     "keys"              => ['draft_order_id'],
-            //     "attr" => [
-            //         "data-remove"       => create_partner_url('/orders/delete/{{draft_order_id}}'),
-            //         "data-redirect"     => "false",
-            //         "data-type"         => "list"
-            //     ],
-            //     "has_access"        => "delete_order_student",
-            // ],
+             [
+                 "title"             => lang('table_btn_delete'),
+                 "link"              => create_partner_url('/orders/delete/{{draft_order_id}}'),
+                 "class"             => "ico-delete dropdown-divider",
+                 "keys"              => ['draft_order_id'],
+                 "attr" => [
+                     "data-remove"       => create_partner_url('/orders/delete/{{draft_order_id}}'),
+                     "data-redirect"     => "false",
+                     "data-type"         => "list"
+                 ],
+                 "has_access"        => "delete_order_student",
+             ],
         ],
 
         // filters

@@ -15,7 +15,7 @@ class Admins_model extends Admin_Model
     */
     private function _list_options($options)
     {
-        // $options['where']['pls_users.user_role_id'] = USER_ROLE_ADMINISTRATOR;
+        //$options['where']['pls_users.user_role_id'] = USER_ROLE_ADMINISTRATOR;
         $options['where']['pls_users.status !='] = STATUS_DRAFT;
         $options['where']['pls_users.is_deleted'] = 0;
 
@@ -25,7 +25,7 @@ class Admins_model extends Admin_Model
             'type' => 'left'
         ];
         
-        $options['group_by'] = isset($options['group_by'])?$options['group_by']:['pls_users.user_id'];
+       // $options['group_by'] = isset($options['group_by'])?$options['group_by']:['pls_users.user_id'];
         
         return $options;
     }
@@ -124,7 +124,7 @@ class Admins_model extends Admin_Model
                 $options['where']['target_table.status <>'] = STATUS_DRAFT;
             break;
         }
-        //$options['group_by'] = isset($options['group_by'])?$options['group_by']:['pls_users.user_id'];
+        $options['group_by'] = isset($options['group_by'])?$options['group_by']:['pls_users.user_id'];
         $options['as_array'] = TRUE;
         
         return $this->get_list($options);

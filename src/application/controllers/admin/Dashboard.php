@@ -30,23 +30,6 @@ class Dashboard extends Admin_Controller
 	}
 
 
-	public function analytics()
-	{
-		$data = [];
-		$this->pls_layout_lib->admin_layout('/admin/analytics/analytics');
-	}
-
-
-	public function ana()
-	{
-		$data = [];
-		$this->pls_layout_lib->admin_layout('/admin/analytics/analytics');
-	}
-
-
-
-
-
     public function profile()
     {
         $data['data'] = $this->users_model->load($this->user->user_id, USER_ROLE_ADMINISTRATOR);

@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Orders_model extends Partner_Model
+class Orders_model extends PLS_Model
 {
     public function __construct()
     {
@@ -75,7 +75,9 @@ class Orders_model extends Partner_Model
     function save($data)
     {
         if (isset($data['order_id'])) {
-            $data['order_date'] = date('Y-m-d', strtotime($data['order_date']));
+            if(isset($data['order_date'])){
+                $data['order_date'] = date('Y-m-d', strtotime($data['order_date']));
+            }
             $data = $this->pls_crud_lib->updated($this->table, $data);
             $result = $this->db->update($this->table, $data, 'order_id = '.$data['order_id']);
         }

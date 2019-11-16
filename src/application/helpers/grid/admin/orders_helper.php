@@ -132,89 +132,103 @@ function orders_grid_columns()
                 ],
                 "has_access"        => "update_orders",
             ],
-            // [
-            //     "title"             => lang('table_btn_deactivate'),
-            //     "link"              => '/admin/orders/deactivate/{{draft_order_id}}',
-            //     "class"             => "ico-deactivate",
-            //     "type"              => "deactivate",
-            //     "keys"              => ['draft_order_id'],
-            //     "js_query" => [
-            //         "row"               => "status",
-            //         "operator"          => "==",
-            //         "value"             => [
-            //             ORDER_STATUS_APPROVED,
-            //         ],
-            //     ],
-            //     "attr" => [
-            //         "data-alert"                => "/admin/orders/deactivate/{{draft_order_id}}",
-            //         "data-redirect"             => "false",
-            //         "data-module"               => "list",
-            //         "data-alert-type"           => "warning",
-            //         "data-alert-title"          => lang('alert_title'),
-            //         "data-alert-text"           => lang('alert_text_deactivate_order'),
-            //         "data-alert-title-success"  => lang('alert_title_success'),
-            //         "data-alert-text-success"   => lang('alert_text_success_deactivate_order'),
-            //         "data-alert-button"         => lang('table_btn_deactivate')
-            //     ],
-            //     "has_access"        => "update_orders",
-            // ],
-            // [
-            //     "title"             => lang('table_btn_activate'),
-            //     "link"              => '/admin/orders/deactivate/{{draft_order_id}}',
-            //     "class"             => "ico-deactivate",
-            //     "type"              => "deactivate",
-            //     "keys"              => ['draft_order_id'],
-            //     "js_query" => [
-            //         "row"               => "status",
-            //         "operator"          => "==",
-            //         "value"             => [
-            //             ORDER_STATUS_INACTIVE,
-            //         ],
-            //     ],
-            //     "attr" => [
-            //         "data-alert"                => "/admin/orders/deactivate/{{draft_order_id}}",
-            //         "data-redirect"             => "false",
-            //         "data-module"               => "list",
-            //         "data-alert-type"           => "info",
-            //         "data-alert-title"          => lang('alert_title'),
-            //         "data-alert-text"           => lang('alert_text_activate_order'),
-            //         "data-alert-title-success"  => lang('alert_title'),
-            //         "data-alert-text-success"   => lang('alert_text_success_activate_order'),
-            //         "data-alert-button"         => lang('table_btn_activate')
-            //     ],
-            //     "has_access"        => "update_orders",
-            // ],
-            // [
-            //     "title"                 => lang('table_btn_cancel'),
-            //     "link"                  => "#pls_cancellation-modal",
-            //     "class"                 => "ico-cancel",
-            //     "keys"                  => ['draft_order_id'],
-            //     "js_query" => [
-            //         "row"               => "status",
-            //         "operator"          => "==",
-            //         "value"             => [
-            //             ORDER_STATUS_APPROVED,
-            //         ],
-            //     ],
-            //     "attr" => [
-            //         "data-toggle"               => "modal",
-            //         "data-target"               => "#pls_cancellation-modal",
-            //         "data-cancellation-id"      => "{{draft_order_id}}",
-            //         "data-cancellation-url"     => "/admin/orders/cancel/{{draft_order_id}}",
-            //     ],
-            //     "has_access"            => "update_orders",
-            // ],
+             [
+                 "title"             => lang('table_btn_deactivate'),
+                 "link"              => '/admin/orders/deactivate/{{draft_order_id}}',
+                 "class"             => "ico-deactivate",
+                 "type"              => "deactivate",
+                 "keys"              => ['draft_order_id'],
+                 "js_query" => [
+                     "row"               => "status",
+                     "operator"          => "==",
+                     "value"             => [
+                         ORDER_STATUS_APPROVED,
+                     ],
+                 ],
+                 "attr" => [
+                     "data-alert"                => "/admin/orders/deactivate/{{draft_order_id}}",
+                     "data-redirect"             => "false",
+                     "data-module"               => "list",
+                     "data-alert-type"           => "warning",
+                     "data-alert-title"          => lang('alert_title'),
+                     "data-alert-text"           => lang('alert_text_deactivate_order'),
+                     "data-alert-title-success"  => lang('alert_title_success'),
+                     "data-alert-text-success"   => lang('alert_text_success_deactivate_order'),
+                     "data-alert-button"         => lang('table_btn_deactivate')
+                 ],
+                 "has_access"        => "update_orders",
+             ],
+             [
+                 "title"             => lang('table_btn_activate'),
+                 "link"              => '/admin/orders/deactivate/{{draft_order_id}}',
+                 "class"             => "ico-deactivate",
+                 "type"              => "deactivate",
+                 "keys"              => ['draft_order_id'],
+                 "js_query" => [
+                     "row"               => "status",
+                     "operator"          => "==",
+                     "value"             => [
+                         ORDER_STATUS_INACTIVE,
+                     ],
+                 ],
+                 "attr" => [
+                     "data-alert"                => "/admin/orders/deactivate/{{draft_order_id}}",
+                     "data-redirect"             => "false",
+                     "data-module"               => "list",
+                     "data-alert-type"           => "info",
+                     "data-alert-title"          => lang('alert_title'),
+                     "data-alert-text"           => lang('alert_text_activate_order'),
+                     "data-alert-title-success"  => lang('alert_title'),
+                     "data-alert-text-success"   => lang('alert_text_success_activate_order'),
+                     "data-alert-button"         => lang('table_btn_activate')
+                 ],
+                 "has_access"        => "update_orders",
+             ],
+             [
+                 "title"                 => lang('table_btn_cancel'),
+                 "link"                  => "#pls_cancellation-modal",
+                 "class"                 => "ico-cancel",
+                 "keys"                  => ['draft_order_id'],
+                 "js_query" => [
+                     "row"               => "status",
+                     "operator"          => "==",
+                     "value"             => [
+                         ORDER_STATUS_APPROVED,
+                     ],
+                 ],
+                 "attr" => [
+                     "data-toggle"               => "modal",
+                     "data-target"               => "#pls_cancellation-modal",
+                     "data-cancellation-id"      => "{{draft_order_id}}",
+                     "data-cancellation-url"     => "/admin/orders/cancel/{{draft_order_id}}",
+                 ],
+                 "has_access"            => "update_orders",
+             ],
+//            [
+//                "title"             => lang('table_btn_delete'),
+//                "link"              => '/admin/orders/delete/{{draft_order_id}}',
+//                "class"             => "ico-delete dropdown-divider",
+//                "keys"              => ['draft_order_id'],
+//                "attr" => [
+//                    "data-remove"       => '/admin/orders/delete/{{draft_order_id}}',
+//                    "data-redirect"     => "false",
+//                    "data-type"         => "list"
+//                ],
+//                "has_access"        => "delete_orders",
+//            ],
+
             [
-                "title"             => lang('table_btn_delete'),
-                "link"              => '/admin/orders/delete/{{draft_order_id}}',
-                "class"             => "ico-delete dropdown-divider",
-                "keys"              => ['draft_order_id'],
+                "title"                 => lang('table_btn_delete'),
+                "link"                  => '/admin/orders/delete/{{draft_order_id}}',
+                "class"                 => "ico-delete dropdown-divider",
+                "keys"                  => ['draft_order_id'],
                 "attr" => [
                     "data-remove"       => '/admin/orders/delete/{{draft_order_id}}',
                     "data-redirect"     => "false",
                     "data-type"         => "list"
                 ],
-                "has_access"        => "delete_orders",
+
+                "has_access"            => "delete_orders",
             ],
         ],
 

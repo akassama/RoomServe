@@ -37,6 +37,15 @@
 					</div>
 		        </div><!-- /status -->
 
+                <!-- role -->
+                <div class="pls_field-wrap">
+                    <label class="pls_field-label"><?=lang('form_role')?></label>
+                    <div class="pls_switcher-group">
+                        <label class="pls_switcher switcher-success"><input type="radio" name="form[user_role_id]" value="<?=USER_ROLE_PARTNER_ADMINISTRATOR?>" <? if($data->user_role_id == USER_ROLE_PARTNER_ADMINISTRATOR) echo ("checked");?>><div><?=lang('form_btn_user')?></div></label>
+                        <label class="pls_switcher switcher-danger"><input type="radio" name="form[user_role_id]" value="<?=USER_ROLE_ADMINISTRATOR?>" <? if($data->user_role_id == USER_ROLE_ADMINISTRATOR) echo ("checked");?> ><div><?=lang('form_btn_admin')?></div></label>
+                    </div>
+                </div><!-- /role -->
+
 				<!-- name -->
 				<div class="pls_field-wrap">
 		        	<label class="pls_field-label"><?=lang('form_name')?></label>

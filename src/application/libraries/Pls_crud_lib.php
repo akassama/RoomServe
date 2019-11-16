@@ -244,19 +244,19 @@ class Pls_crud_lib
             $original_order_data = $data;
             $original_order_data['order_id'] = $original_order->order_id;
             $this->CI->orders_model->save($original_order_data);
-            //delete original order offers
-            $order_offers = $this->CI->offers_model->get_order_offers_domino($original_order->order_id);
-            $this->delete_items($order_offers, 'pls_offers', 'offer_id');
-            //delete original order locations
-            $order_location = $this->CI->locations_model->get_order_locations_domino($original_order->order_id);
-            $this->delete_items($order_location, 'pls_post_locations', 'location_id');
+//            //delete original order offers
+//            $order_offers = $this->CI->offers_model->get_order_offers_domino($original_order->order_id);
+//            $this->delete_items($order_offers, 'pls_offers', 'offer_id');
+//            //delete original order locations
+//            $order_location = $this->CI->locations_model->get_order_locations_domino($original_order->order_id);
+//            $this->delete_items($order_location, 'pls_post_locations', 'location_id');
         }
-        //delete offers
-        $order_offers = $this->CI->offers_model->get_order_offers_domino($data['order_id']);
-        $this->delete_items($order_offers, 'pls_offers', 'offer_id');
-        //delete locations
-        $order_location = $this->CI->locations_model->get_order_locations_domino($data['order_id']);
-        $this->delete_items($order_location, 'pls_post_locations', 'location_id');
+//        //delete offers
+//        $order_offers = $this->CI->offers_model->get_order_offers_domino($data['order_id']);
+//        $this->delete_items($order_offers, 'pls_offers', 'offer_id');
+//        //delete locations
+//        $order_location = $this->CI->locations_model->get_order_locations_domino($data['order_id']);
+//        $this->delete_items($order_location, 'pls_post_locations', 'location_id');
         return $data;
     }
 
