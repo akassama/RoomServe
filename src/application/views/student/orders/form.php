@@ -1,14 +1,15 @@
 <div class="container-fluid">
 	<form action="<?=create_partner_url('/orders/update/'.$data->order_id.'/'.$lang)?>" method="post" data-validate="true">
 
-		<!-- Titlebar -->
+		<!-- Titlebar !-->
 		<h1 class="pls_title-1">
 			<!-- back button -->
 			<a class="pls_back-button" data-back="true"><span><?=lang('form_btn_back')?></span></a><!-- /back button -->
 
 			<!-- page title -->
 			<span><?=lang('module_order')?></span><!-- /page title -->
-		</h1><!-- /titlebar -->
+
+                </h1><!-- /titlebar -->
 
 		<? if ($decline_message) : ?>
 			<div class="pls_form-decline-message">
@@ -30,9 +31,7 @@
 
 
 		<div class="">
-			
-
-			<!-- New order form (Draft data)-->
+                <!-- New order form (Draft data)-->
 			<? $offer_options['parent_id'] = $location_options['parent_id'] = $data->order_id;
 
 			$draft_options = [

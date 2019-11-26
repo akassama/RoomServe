@@ -8,15 +8,13 @@ class Users extends Admin_Controller
     {
 		
         parent::__construct();
-		//Load Admins model
-		$this->load->model('admin/Admins_model', 'admins_model');
-		
+        $this->load->model('Users_model', 'users_model');
 		$this->module_name = 'administrators';
-		$this->model = $this->admins_model;
+		$this->model = $this->users_model;
     }
 
     /**
-    * Administrators list
+    * Users list
     */
     public function index()
     {
@@ -51,11 +49,11 @@ class Users extends Admin_Controller
 
 
 	/**
-	* Creates admin user id with status draft and redirects to update if success
+	* Creates user id with status draft and redirects to update if success
 	*/
 	public function create()
 	{
-		$data = ['user_role_id' => USER_ROLE_ADMINISTRATOR];
+		$data = ['user_role_id' => USER_ROLE_PARTNER_ADMINISTRATOR];
 		if ($id = $this->users_model->save($data)) {
 
 			//if user has not access to update
@@ -92,7 +90,7 @@ class Users extends Admin_Controller
 					$fields[] = 'email';
 				if ($userdata = $this->pls_validation_lib->validate('user', $post, $fields, ['email' => ['is_unique']])) {
 					$userdata['user_id'] = $data['data']->user_id;
-					if ($newuser)	$userdata['user_role_id'] = USER_ROLE_ADMINISTRATOR;
+					$userdata['user_role_id'] = $post['user_role_id'];
 					if($pass_changed){
 						unset($userdata['confirm_password']);
 						$userdata['password'] = $this->pls_auth_lib->hash_password($userdata['password'], $id);
@@ -102,8 +100,8 @@ class Users extends Admin_Controller
 						if ($this->session->userdata('new_item_created')) {
 							$this->session->unset_userdata('new_item');
 							$this->pls_alert_lib->set_flash_messages('success', lang('admin_create_success'));
-							echo json_encode(['redirect' => '/admin/administrators']);
-							return;
+                            redirect("/admin/administrators");
+                            return;
 						}
 						$json['message'] = ajax_messages('success', $newuser?lang('admin_create_success'):lang('admin_update_success'));
 					}
@@ -129,11 +127,11 @@ class Users extends Admin_Controller
 
 
 	/**
-	* Deletes admin user
+	* Deletes user
 	*/
 	public function delete($id = NULL)
 	{
-		if ($this->input->is_ajax_request() && $user = $this->users_model->load($id, USER_ROLE_ADMINISTRATOR)) {
+		if ($this->input->is_ajax_request() && $user = $this->users_model->load($id)) {
 			if ($id == $this->user->user_id || $id == SUPER_ADMINISTRATOR) {
 				$json['message'] = ajax_messages('warning', lang('admin_delete_denied'));
 			}
@@ -149,12 +147,12 @@ class Users extends Admin_Controller
 				}
 			}
 			if ($this->input->get('redirect')) {
-				$json['redirect'] = '/admin/administrators';
+			  $json['redirect'] = create_url('/users');
 			}
 			echo json_encode($json);
 		}
 		else {
-			redirect('/admin/administrators');
+			redirect(create_url('/users'));
 		}
 	}
 

@@ -4,19 +4,21 @@ class Orders extends Partner_Controller
 {
 	public function __construct()
     {
-		
+
         parent::__construct();
 		//Load Orders model
         $this->load->model('student/Orders_model', 'orders_model');
         $this->load->model('admin/Cleaning_options_model', 'cleaning_options_model');
         $this->load->model('Messages_model', 'messages_model');
 		$this->load->model('Common_Orders_model', 'common_orders_model');
-		
+
 		$preset_name = $this->input->get('preset');
 		//choose module name for grid according to preset name
 		$this->module_name = in_array($preset_name, ['pending','declined'])?'orders_approval_partner':'order_student';
 		$this->model = $this->orders_model;
     }
+
+
 
     /**
     * Rule orders list
@@ -32,7 +34,7 @@ class Orders extends Partner_Controller
                 'text'      => lang('module_btn_add_order')
             ],
             'access'        => [
-                'add_btn'   => '',
+                'add_btn'   => 'nnnn',
             ],
             'empty'         => [
                 'text'      => '',
@@ -41,12 +43,12 @@ class Orders extends Partner_Controller
             'table'         => [
                 'url'       => create_partner_url('/orders/get_list'),
                 'module'    => 'order_student',
-                'type'      => 'all'
+                'type'      => 'all',
             ]
         ];
 		if ($preset_name = $this->input->get('preset')) {
 			$data['data']['table']['url'] = create_partner_url('/orders/get_list?preset='.$preset_name);
-			
+
 		}
         $this->pls_layout_lib->partner_layout('/templates/template-table-list', $data);
     }
@@ -115,23 +117,24 @@ class Orders extends Partner_Controller
 
 	/**
 	 * Delete order
-	 */
+     * Delete Order Use Case
+     */
 	public function delete($order_id)
 	{
 		if ($this->input->is_ajax_request() ) {
 			$json['success'] = FALSE;
 			if ($order = $this->orders_model->load($order_id)) {
-				if ($order->partner_id != $this->partner->partner_id) {
+				if ($order->student_id != $this->user->user_id) {
 					show_403();
 				}
-				$original_order = $this->orders_model->load_original($order_id, $this->lang->default_lang, FALSE);
-				if (in_array($original_order->status, [ORDER_STATUS_PENDING, ORDER_STATUS_DECLINED, STATUS_DRAFT])) {
+				//$original_order = $this->orders_model->load_original($order_id, $this->lang->default_lang, FALSE);
+				if (in_array($order->status, [ORDER_STATUS_PENDING, ORDER_STATUS_DECLINED, STATUS_DRAFT])) {
 					$data['order_id'] = $order->order_id;
 					$data = $this->pls_crud_lib->deleted('pls_orders', $data);
 					if ($this->orders_model->save($data)) {
 						log_activity($order_id);
 						$json['message'] = ajax_messages('success', lang('order_delete_success'));
-						$json['redirect'] = '/admin/orders';
+						$json['redirect'] = '/student/'. $this->student->user_id . '/orders';
 						$json['success'] = TRUE;
 					} else {
 						$json['message'] = ajax_messages('error', lang('order_delete_failed'));
