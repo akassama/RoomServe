@@ -17,6 +17,8 @@ class Pls_grid_lib
         'groups'                            => ['grid/admin/user_groups', 'pls_users_groups'],
         'orders'                            => ['grid/admin/orders', 'pls_orders'],
         'cleaning_options'                        => ['grid/admin/cleaning_options', 'pls_cleaning_options'],
+        'payment_options'                        => ['grid/admin/payment_options', 'pls_payment_options'],
+        'personal_options'                        => ['grid/admin/personal_options', 'pls_personal_options'],
 
         'order_student'                    => ['grid/student/orders', 'pls_orders'],
     );

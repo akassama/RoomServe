@@ -61,8 +61,7 @@ if ($approve) {
 
 					<label class="pls_form-category">
 						<input type="radio" name="<?=$approve?>form[option_id]" value="<?=$category['option_id']?>" required>
-						<div class="info"><?=$category['name']?></div>
-					</label>
+<div class="info" > <?=$category['name'] . ' Price:' . $category['price']?> </div>					</label>
 
 				<? endforeach; ?>
 
@@ -93,18 +92,24 @@ if ($approve) {
                 </div><!-- /start date -->
 			</div>
 
+			<? if ($payment_types) : ?>
+
 			<div class="pls_column-50">
 				<!-- email -->
 				<div class="pls_field-wrap">
                 <label class="pls_field-label required">Payment type</label>
                     <div class="pls_field">
-                        <select name="form[estimated_savings_currency]" class="pls_selectpicker" required>
-                            <option value="cash" <?=$data->payment_type=='cash' ? 'selected' : ''?>>Cash</option>
-                            <option value="card" <?=$data->payment_type=='card' ? 'selected' : ''?>>Bank card</option>
+                        <select name="form[payment_type]" class="pls_selectpicker" required>
+                        	<? foreach ($payment_types as $payment_type) : ?>
+
+                            <option value="<?=$payment_type['payment_id']?>" <?=$data->payment_type==$payment_type['payment_id'] ? 'selected' : ''?>><?=$payment_type['name']?></option>
+
+                            <? endforeach; ?>
                         </select>
                     </div>
 		        </div><!-- /email -->
 			</div>
+	<? endif; ?>
 
 		</div>
     </div><!-- /group - contact details -->

@@ -7,6 +7,9 @@ class Users_model extends PLS_model
         parent::__construct();
 
         $this->table = 'pls_users';
+        $this->group_table = 'pls_users_groups_rel';
+
+        
     }
 
     /**
@@ -53,12 +56,32 @@ class Users_model extends PLS_model
             }
         }
         else {
-            //$data = $this->pls_crud_lib->created($this->table, $data);
-            if($this->db->insert($this->table, $data)){
+            
+            $data = $this->pls_crud_lib->created($this->table, $data);
+            if($this->db->insert($this->table, $data) ){
                 $result = $this->db->insert_id();
             }
         }
-
+        
+        $group_data = [
+                'user_id' => $result,
+                'user_group_id' => isset($data['user_role_id']) ? $data['user_role_id'] : USER_ROLE_PARTNER_ADMINISTRATOR ,
+                ];
+                
+        $group = $this->db->where([
+            'pls_users_groups_rel.user_id' => $result,
+        ]);
+    
+        $group = $this->db->get($this->group_table)->row();
+        
+        if ($group){
+                $group_data = $this->pls_crud_lib->created($this->group_table,  $group_data, False);
+                $this->db->update($this->group_table, $group_data,'user_id = '.$result);
+        }
+        else {
+                $group_data = $this->pls_crud_lib->created($this->group_table,  $group_data, False);
+                $this->db->insert($this->group_table, $group_data);
+        }
         if($test){
             return $result;
         }
@@ -113,6 +136,18 @@ class Users_model extends PLS_model
         if ($user)
             $user->photo = ($user->photo)?encrypt_file_url($user->photo):'';
         return $user;
+    }
+
+    public function get_all_user_by_role($role_name)
+    {
+        $this->db->where([
+            'is_deleted'   => 0,
+            'user_role_id' => $role_name
+        ]);
+        
+        $users = $this->db->get($this->table);
+        return $users->result_array();
+        
     }
 
 

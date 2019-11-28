@@ -7,13 +7,7 @@ class Cleaning_options extends Admin_Controller
 	public function __construct()
     {
 		// !!! load permission array before parent __construct
-		$this->permissions = [
-			'index'    => 'access_cleaning_options',
-			'get_list' => 'access_cleaning_options',
-			'create'   => 'create_cleaning_options',
-			'update'   => 'update_cleaning_options',
-			'delete'   => 'delete_cleaning_options',
-		];
+
         parent::__construct();
         $this->load->model('admin/Cleaning_options_model', 'cleaning_options_model');
 
@@ -116,8 +110,9 @@ class Cleaning_options extends Admin_Controller
 	*/
 	public function delete($id = NULL)
 	{
-		if ($this->input->is_ajax_request() && $cleaning_option = $this->cleaning_options_model->load($id)) {
-            $data['option_id'] = $cleaning_option->user_group_id;
+		if ($this->input->is_ajax_request()) {
+		    $cleaning_option = $this->cleaning_options_model->load($id);
+            $data['option_id'] = $cleaning_option->option_id;
 			$data = $this->pls_crud_lib->deleted('pls_cleaning_options', $data);
             if ($id = $this->cleaning_options_model->save($data)) {
                 $json['message'] = ajax_messages('success', lang('cleaning_option_delete_success'));

@@ -69,6 +69,19 @@ function orders_grid_columns()
                 "field"                 => 'CONCAT(pls_users.first_name," ", COALESCE(pls_users.last_name, "")) as created_by',
                 "width"                 => "5"
             ],
+            // [
+            //     "name"                  => "customer",
+            //     "title"                 => lang('table_customer'),
+            //     "field"                 => 'CONCAT(pls_users.first_name," ", COALESCE(pls_users.last_name, "")) as customer',
+            //     "width"                 => "5"
+            // ],
+             [
+                "name"                  => "cost",
+                "title"                 => lang('table_cost'),
+                "field"                 => 'pls_orders.cost as cost',
+                "width"                 => "5"
+            ],
+
             [
                 "name"                  => "created_at",
                 "title"                 => lang('table_created_at'),
@@ -279,6 +292,32 @@ function orders_grid_columns()
                     "url"               => "/admin/orders/get_ajax_creators/",
                     "group"             => "added"
                 ],
+                // [
+                //     "name"              => "customer",
+                //     "title"             => lang('table_customer'),
+                //     "dbfield"           => "pls_orders.student_id",
+                //     "field"             => "select",
+                //     "attr" => [
+                //         "data-empty"    => "true",
+                //         "data-search"   => "true"
+                //     ],
+                //     "operator"          => "=",
+                //     "url"               => "/admin/orders/get_ajax_customers/",
+                //     "group"             => "added"
+                // ],
+                [
+                    "name"              => "cost",
+                    "title"             => lang('table_cost'),
+                    "dbfield"           => "pls_orders.cost",
+                    "field"             => "select",
+                    "attr" => [
+                        "data-empty"    => "true",
+                        "data-search"   => "true"
+                    ],
+                    "operator"          => "=",
+                    "url"               => "/admin/orders/get_ajax_cost/",
+                    "group"             => "added"
+                ],
                 [
                     "name"              => "added-date",
                     "title"             => lang('table_added_date'),
@@ -359,14 +398,8 @@ function orders_grid_columns()
                     [
                         "dbfield"           => "pls_orders.status",
                         "operator"          => "=",
-                        "value"             =>
-                            ORDER_STATUS_PENDING,
+                        "value"             => ORDER_STATUS_PENDING,
 
-                    ],
-                    [
-                        "dbfield"           => "pls_orders.draft_order_id",
-                        "operator"          => "",
-                        "value"             => 0
                     ],
                 ],
             ],
@@ -386,7 +419,7 @@ function orders_grid_columns()
                     ],
                     [
                         "dbfield"           => "pls_orders.draft_order_id",
-                        "operator"          => "",
+                        "operator"          => "=",
                         "value"             => 0
                     ],
                 ],

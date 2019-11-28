@@ -50,6 +50,20 @@ function get_settings_nav()
 			"class" => "categories",
 			"access" => "access_categories"
 		],
+		[
+			"url" => "settings/payment_options",
+			"title" => 'Payment options',
+			"desc" => 'Manage payment options',
+			"class" => "categories",
+			"access" => "access_categories"
+		],
+		[
+			"url" => "settings/personal_options",
+			"title" => 'Personal options',
+			"desc" => 'Manage personal options',
+			"class" => "categories",
+			"access" => "access_categories"
+		],
 		
 	];
 }

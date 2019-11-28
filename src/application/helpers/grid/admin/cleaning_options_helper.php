@@ -75,9 +75,15 @@ function cleaning_options_grid_columns()
             ],
             [
                 "title"                 => lang('table_btn_delete'),
-                "link"                  => "/admin/settings/cleaning_options/delete/{{option_id}}",
+                "link"                  => '/admin/settings/cleaning_options/delete/{{option_id}}',
                 "class"                 => "ico-delete dropdown-divider",
                 "keys"                  => ['option_id'],
+                "attr" => [
+                    "data-remove"       => '/admin/settings/cleaning_options/delete/{{option_id}}',
+                    "data-redirect"     => "false",
+                    "data-type"         => "list"
+                ],
+
                 "has_access"            => "delete_categories",
             ],
         ],

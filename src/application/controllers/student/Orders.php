@@ -9,6 +9,8 @@ class Orders extends Partner_Controller
 		//Load Orders model
         $this->load->model('student/Orders_model', 'orders_model');
         $this->load->model('admin/Cleaning_options_model', 'cleaning_options_model');
+        $this->load->model('admin/Payment_options_model', 'payment_options_model');
+
         $this->load->model('Messages_model', 'messages_model');
 		$this->load->model('Common_Orders_model', 'common_orders_model');
 
@@ -58,7 +60,7 @@ class Orders extends Partner_Controller
     * Creates order id with status = -2 and redirects to update if success
     */
     public function create() {
-        if ($id = $this->orders_model->save(['student_id' => $this->student->user_id])) {
+        if ($id = $this->orders_model->save(['student_id' => $this->student->user_id, 'created_by' => $this->student->user_id])) {
             redirect(create_partner_url("/orders/update/$id"));
         }
         else {
@@ -86,6 +88,9 @@ class Orders extends Partner_Controller
                     $order_data['order_id'] = $data['data']->order_id;
                     $order_data['reason_id'] = $new_data ? STATUS_REASON_VENUE_AWAITING_APPROVAL:STATUS_REASON_VENUE_AWAITING_CHANGES;
                     $order_data['status'] = ORDER_STATUS_PENDING;
+
+                    $order_data['cost'] = $this->cleaning_options_model->get_price_by_id($post['option_id']);
+
 					$order_trans_data['name'] = $order_data['name'];  unset($order_data['name']);
 					$order_trans_data['description'] = $order_data['description'];  unset($order_data['description']);
                     $order_trans_data['order_id'] = $data['data']->order_id;
@@ -210,6 +215,17 @@ class Orders extends Partner_Controller
         }
     }
     /* --------------------------------------------------------------------- */
+
+    public function get_ajax_cost()
+    {
+        if ($this->input->is_ajax_request()) {
+            $options['fields'] = 'pls_orders.order_id as key, pls_orders.cost as val';
+            $options['group_by'] = 'pls_users.order_id';
+            $options['order_by'] = ['key' => 'val', 'direction' => 'ASC'];
+            echo json_encode($this->orders_model->get_grid_list($options));
+        }
+    }
+ 
 	public function check_order_availability()
     {
         if ($this->input->is_ajax_request()) {
@@ -234,7 +250,8 @@ class Orders extends Partner_Controller
 		//load draft data
 		$data['data'] = $this->set_order_attributes($data['data']);
 		//common
-		$data['categories'] = $this->cleaning_options_model->get_all_categories('order');
+		$data['payment_types'] = $this->payment_options_model->get_all_types();
+        $data['categories'] = $this->cleaning_options_model->get_all_categories('order');
 		$data['limit'] = project('location_limit');
 		$data['languages'] = $this->config->item('site_languages');
 		$data['decline_message'] = $this->messages_model->get_message($id, TYPE_VENUE, 'decline');

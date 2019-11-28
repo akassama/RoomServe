@@ -37,20 +37,21 @@ Prerequisites:
 
 1. Create Mysql database with name "roomservice"
 2. Find the "roomservice.sql" file inside database folder and import that file to recently created roomservice database
-3.  Edit "env.development" file 
-4. Default user for mysql server is "root", password is empty, if you need to change these, you can edit "env.development" file) 
-5. Default settings for email are empty, you need to change them, you need to add in "env.development" file: EMAIL_HOST, EMAIL_USER, EMAIL_PASS, EMAIL_PORT, EMAIL_CRYPTO.
-6. Install Composer dependencies "composer install"
-7. If you have Openserver, create domain "room.lc" and put all folders and files inside Roomservice folder into domain folder
-8. Check url "room.lc" from browser, that's all!
+3.  Create "env.development" file based on ''.env.example"
+4. Edit "env.development" file:
+   1. Edit user name, password and host for mysql server
+   2. For main notofocation edit EMAIL_HOST, EMAIL_USER, EMAIL_PASS, EMAIL_PORT, EMAIL_CRYPTO.
+5. Install Composer dependencies "composer install"
+6. If you have Openserver, create domain "room.lc" and put all folders and files inside Roomservice folder into domain folder
+7. Check url "room.lc" from browser, that's all!
 
-If any problems, write to @bzimor_inno via telegram or check Codeigniter online documentation: https://codeigniter.com/user_guide/installation/index.html
+If any problems, write to @bzimor_inno or @valeriayurinskaya via telegram or check Codeigniter online documentation: https://codeigniter.com/user_guide/installation/index.html
 
-You can check the working prototype via "http://roomservice.asranov.uz/"
+You can check the working prototype via "http://roomserviceinnopolis.ru"
 
 Admin user:
-email: admin@roomservice.com
-password: password
+email: admin@roomserviceinnopolis.com
+password: admin1234
 
 Student user:
 you can register and login, no email verification required

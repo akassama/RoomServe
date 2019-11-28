@@ -62,6 +62,12 @@ function order_student_grid_columns()
                 "width"                 => "15",
             ],
             [
+                "name"                  => "cost",
+                "title"                 => lang('table_cost'),
+                "field"                 => 'pls_orders.cost as cost',
+                "width"                 => "5"
+            ],
+            [
                 "name"                  => "created_at",
                 "title"                 => lang('table_created_at'),
                 "field"                 => 'DATE_FORMAT(pls_orders.created_at, "{{date_format}}") as created_at',
@@ -141,6 +147,19 @@ function order_student_grid_columns()
                     "operator"          => "=",
                     "url"               => create_partner_url("/orders/get_ajax_categories/"),
                     "group"             => "basic_information"
+                ],
+                [
+                    "name"              => "cost",
+                    "title"             => lang('table_cost'),
+                    "dbfield"           => "pls_orders.cost",
+                    "field"             => "select",
+                    "attr" => [
+                        "data-empty"    => "true",
+                        "data-search"   => "true"
+                    ],
+                    "operator"          => "=",
+                    "url"               => create_partner_url("/orders/get_ajax_cost/"),
+                    "group"             => "added"
                 ],
                 [
                     "name"              => "added-date",
