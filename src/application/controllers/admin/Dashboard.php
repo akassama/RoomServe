@@ -32,7 +32,7 @@ class Dashboard extends Admin_Controller
 
     public function profile()
     {
-        $data['data'] = $this->users_model->load($this->user->user_id, USER_ROLE_ADMINISTRATOR);
+        $data['data'] = $this->users_model->load($this->user->user_id);
         if($post = $this->input->post('form')) {
             $fields = array('first_name');
             if ($pass_changed = isset($post['password']))
@@ -42,11 +42,11 @@ class Dashboard extends Admin_Controller
                 $fields[] = 'email';
             if ($userdata = $this->pls_validation_lib->validate('user', $post, $fields, ['email' => ['is_unique']])) {
                 $userdata['user_id'] = $data['data']->user_id;
+                $userdata['user_role_id'] = USER_ROLE_ADMINISTRATOR;
                 if($pass_changed){
                     unset($userdata['confirm_password']);
                     $userdata['password'] = $this->pls_auth_lib->hash_password($userdata['password'], $data['data']->user_id);
                 }
-				$this->pls_file_lib->save_image_to_db($post['photo'], $data['data']->user_id, 'admin.avatar');
                 if ($this->users_model->save($userdata)) {
 					log_activity($this->user->user_id);
                     //update session userdata

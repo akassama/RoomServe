@@ -172,3 +172,7 @@ $lang["table_stats_declined"]				= "Declined";
 $lang["table_approved_at"]       			= "Approved date";
 $lang["table_approved_by"]       			= "Approved by";
 $lang["table_approved_date"]				= "Approved date";
+$lang["table_customer"]			        	= "Customer";
+$lang["table_cost"]			             	= "Cost";
+
+

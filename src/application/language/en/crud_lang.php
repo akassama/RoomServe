@@ -56,8 +56,21 @@ $lang['cleaning_option_update_failed']  = 'Cleaning option update error, please 
 $lang['cleaning_option_delete_success'] = 'Cleaning option was successfully deleted';
 $lang['cleaning_option_delete_failed']  = 'Cleaning option delete error, please try again';
 
+$lang['payment_options_create_success'] = 'New payment option was successfully created';
+$lang['payment_options_create_failed']  = 'New payment option creation error, please try again';
+$lang['payment_options_create_denied']  = 'Payment option creation is limited';
+$lang['payment_options_update_success'] = 'Payment option was successfully updated';
+$lang['payment_options_update_failed']  = 'Payment option update error, please try again';
+$lang['payment_options_delete_success'] = 'Payment option was successfully deleted';
+$lang['payment_options_delete_failed']  = 'Payment option delete error, please try again';
 
-
+$lang['personal_options_create_success'] = 'New personal option was successfully created';
+$lang['personal_options_create_failed']  = 'New personal option creation error, please try again';
+$lang['personal_options_create_denied']  = 'Personal option creation is limited';
+$lang['personal_options_update_success'] = 'Personal option was successfully updated';
+$lang['personal_options_update_failed']  = 'Personal option update error, please try again';
+$lang['personal_options_delete_success'] = 'Personal option was successfully deleted';
+$lang['personal_options_delete_failed']  = 'Personal option delete error, please try again';
 /*
 |--------------------------------------------------------------------------
 | Orders CRUD messages

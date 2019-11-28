@@ -91,10 +91,18 @@ class Cleaning_options_model extends Admin_Model
      */
     public function get_all_categories($type = NULL){
         $options['as_array'] = TRUE;
-        $options['fields'] = 'pls_cleaning_options.option_id, name';
+        $options['fields'] = 'pls_cleaning_options.option_id, name, price';
         $options['where']['status'] = STATUS_ACTIVE;
 
         $result = $this->get_list($options);
         return $result;
+    }
+    
+    public function get_price_by_id($id){
+        $options['as_array'] = TRUE;
+        $options['fields'] = 'pls_cleaning_options.price';
+        $options['where']['option_id'] = $id;
+        $result = $this->get_list($options);
+        return $result[0]['price'];
     }
 }

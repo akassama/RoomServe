@@ -33,6 +33,25 @@ if ($approve) {
             </div>
         </div><!-- /name -->
 
+<? if ($all_customers) : ?>
+
+			<!-- customer -->
+					<div class="pls_field-wrap">
+	                <label class="pls_field-label required">Customer</label>
+	                    <div class="pls_field">
+	                        <select name="form[student_id]" class="pls_selectpicker" required>
+	                        	<?for ($i=0; $i< count($all_customers); $i++ ){?>
+	                        		<option value="<?= $all_customers[$i]['user_id']?>" <?=$data->student_id==$all_customers[$i]['user_id'] ? 'selected' : ''?>> <?=
+	                        		$all_customers[$i]['first_name'] . ' ' . 	$all_customers[$i]['last_name'] ?> </option>
+	                        	<? } ?>
+	                        </select>
+	                    </div>
+			        </div><!-- /customer -->
+
+
+	<? endif; ?>
+					
+
         <!-- about us -->
 		<div class="pls_field-wrap">
         	<label class="pls_field-label">Comment</label>
@@ -64,7 +83,7 @@ if ($approve) {
 
 					<label class="pls_form-category">
 						<input type="radio" name="<?=$approve?>form[option_id]" value="<?=$category['option_id']?>" required>
-						<div class="info"><?=$category['name']?></div>
+						<div class="info" > <?=$category['name'] . ' Price:' . $category['price']?> </div>
 					</label>
 
 				<? endforeach; ?>
@@ -91,7 +110,7 @@ if ($approve) {
 
 				<? foreach ($personnels as $personnel) : ?>
 					<label class="pls_form-card">
-						<input type="radio" name="form[personnel_id]" value="<?=$personnel['personnel_id']?>" required>
+						<input type="radio" name="form[personnel_id]" value="<?=$personnel['personal_id']?>" required>
 						<div class="info"><?=$personnel['name']?></div>
 					</label>
 
@@ -123,6 +142,7 @@ if ($approve) {
                     </div>
                 </div><!-- /start date -->
 			</div>
+    <? if ($payment_types) : ?>
 
 			<div class="pls_column-50">
 				<!-- email -->
@@ -130,12 +150,16 @@ if ($approve) {
                 <label class="pls_field-label required">Payment type</label>
                     <div class="pls_field">
                         <select name="form[payment_type]" class="pls_selectpicker" required>
-                            <option value="cash" <?=$data->payment_type=='cash' ? 'selected' : ''?>>Cash</option>
-                            <option value="card" <?=$data->payment_type=='card' ? 'selected' : ''?>>Bank card</option>
+                        	<? foreach ($payment_types as $payment_type) : ?>
+
+                            <option value="<?=$payment_type['payment_id']?>" <?=$data->payment_type==$payment_type['payment_id'] ? 'selected' : ''?>><?=$payment_type['name']?></option>
+
+                            <? endforeach; ?>
                         </select>
                     </div>
 		        </div><!-- /email -->
 			</div>
+	<? endif; ?>
 
 		</div>
     </div><!-- /group - contact details -->
