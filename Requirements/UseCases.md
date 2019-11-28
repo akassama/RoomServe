@@ -28,7 +28,7 @@ RoomServiceOnDemand
 
 ###Diagram: RoomServiceOnDemand Use Cases 
 
-#### Create Account 
+#### 1. Create Account 
 
 | Use Case Name   | Create Account                                               |
 | --------------- | ------------------------------------------------------------ |
@@ -37,7 +37,7 @@ RoomServiceOnDemand
 | Flow of events  | 1. The User opens the platform and selects registration.  <br />2. The User fills the required information like first name, last name, email.    <br />3. The User selects a strong password ensured by the System.   <br />4. The User registered in the system |
 | Post-conditions | The User got an account to login with.                       |
 
-#### Login 
+#### 2. Login 
 
 | Use Case Name   | Login                                                        |
 | --------------- | ------------------------------------------------------------ |
@@ -46,7 +46,7 @@ RoomServiceOnDemand
 | Flow of events  | 1. The User or The Manager go to the Login page.  <br />2. The User or The Manager type the email.  <br />3. The User or The Manager type the password.  <br />4. The User or The Manager submits the login.  <br />5. The System does authentication.  <br />5.1. If the email and password have been recognized,   then show the homepage.<br />5.2. If the email and password haven’t been   recognized, then show the error message. |
 | Post-conditions | The system shows the homepage to the User or the Manager.    |
 
-#### Logout  
+#### 3. Logout  
 
 | Use Case Name   | Logout                                                       |
 | --------------- | ------------------------------------------------------------ |
@@ -55,7 +55,7 @@ RoomServiceOnDemand
 | Flow of events  | 1. The User or The Manager click the logout button. <br />2. The system does logout. <br />3. The system shows the logout message. |
 | Post-conditions | The User or the Manager has been logged out.                 |
 
-#### Check status 
+#### 4. Check status 
 
 | Use Case Name   | Check status                                                 |
 | --------------- | ------------------------------------------------------------ |
@@ -64,7 +64,7 @@ RoomServiceOnDemand
 | Flow of events  | 1. The User selects an order.  <br />2. The User receives the corresponding information. |
 | Post-conditions | The User sees the current status of the selected order       |
 
-#### Delete Order (User part)  
+#### 5. Delete Order (User part)  
 
 | Use Case Name   | Delete Order (User part)                                     |
 | --------------- | ------------------------------------------------------------ |
@@ -73,7 +73,7 @@ RoomServiceOnDemand
 | Flow of events  | 1. The User clicks on the action button.<br />2. The User chooses the delete button. <br />3. The User confirms order deleting. |
 | Post-conditions | Order deleted by the User                                    |
 
-#### Delete Order (Manager part) 
+#### 6. Delete Order (Manager part) 
 
 | Use Case Name   | Delete Order (Manager part)                                  |
 | --------------- | ------------------------------------------------------------ |
@@ -82,7 +82,7 @@ RoomServiceOnDemand
 | Flow of events  | 1. The Manager clicks on the action button. <br />2. The Manager chooses the delete button. <br />3. The Manager confirms order deleting. |
 | Post-conditions | The system sends an email notification to the user about the removal of the order. The order is deleted by the manager |
 
-#### Send notification  
+#### 7. Send notification  
 
 | Use Case Name   | Send notification                                            |
 | --------------- | ------------------------------------------------------------ |
@@ -91,7 +91,7 @@ RoomServiceOnDemand
 | Flow of events  | 1. The Manager opens one order. <br />2. The Manager selects the action (Edit/Activate/Approve/ Deactivate/ Delete/ Decline/Cancel).   <br />3. The system sends to the User a email with a notification about action. |
 | Post-conditions | The User received the notification created by the Manager.   |
 
-#### Accept Order  
+#### 8. Accept Order  
 
 | Use Case Name   | Accept Order                                                 |
 | --------------- | ------------------------------------------------------------ |
@@ -100,7 +100,7 @@ RoomServiceOnDemand
 | Flow of events  | 1.The Manager checks the order details. <br />2.The Manager accepts the order. |
 | Post-conditions | The order’s status is changed to Accepted. The User received the notification created by the Manager. |
 
-#### Decline Order  
+#### 9. Decline Order  
 
 | Use Case Name   | Decline Order                                                |
 | --------------- | ------------------------------------------------------------ |
@@ -109,7 +109,7 @@ RoomServiceOnDemand
 | Flow of events  | 1.The Manager checks an order details.  <br/>2.The Manager initiates declining of the order.   <br />3.The Manager inputs a reason for declining.  <br/>4.The Manager sends declining information to User. |
 | Post-conditions | The order’s status is changed to Declined. The User received the notification created by the Manager. |
 
-#### Deactivate Order  
+#### 10. Deactivate Order  
 
 | Use Case Name   | Deactivate Order                                             |
 | --------------- | ------------------------------------------------------------ |
@@ -120,7 +120,7 @@ RoomServiceOnDemand
 
 #### Diagram: Detailed “Place Order” Use Case  
 
-#####Enter Apartment No and description 
+#### 11. Enter Apartment No and description 
 
 | Use Case Name   | Enter Apartment No and description                           |
 | --------------- | ------------------------------------------------------------ |
@@ -129,7 +129,7 @@ RoomServiceOnDemand
 | Flow of events  | 1.The User enters an Apartment No for cleaning. <br />2.The User enters a description for cleaning. |
 | Post-conditions | The date and time for cleaning is fulfilled.                 |
 
-#####Select time and date 
+#### 12. Select time and date 
 
 | Use Case Name   | Select time and date                                         |
 | --------------- | ------------------------------------------------------------ |
@@ -138,7 +138,7 @@ RoomServiceOnDemand
 | Flow of events  | 1. The User initiates order creation. <br />2. The User selects a date for cleaning. <br />3. The User selects time for cleaning. |
 | Post-conditions | The date and time for cleaning is fulfilled.                 |
 
-#####Select cleaning options 
+#### 13. Select cleaning options 
 
 | Use Case Name   | Select cleaning options                                      |
 | --------------- | ------------------------------------------------------------ |
@@ -147,7 +147,7 @@ RoomServiceOnDemand
 | Flow of events  | 1. The User selects needed cleaning options from the list of offered services. |
 | Post-conditions | Preferable cleaning options are fulfilled.                   |
 
-#####Select payment options 
+#### 14. Select payment options 
 
 | Use Case Name   | Select cleaning options                                      |
 | --------------- | ------------------------------------------------------------ |
@@ -158,7 +158,7 @@ RoomServiceOnDemand
 
 ####Diagram: Detailed “Manage list of offered services” use case 
 
-#####Add cleaning option 
+#### 15. Add cleaning option 
 
 | Use Case Name   | Add cleaning option                                          |
 | --------------- | ------------------------------------------------------------ |
@@ -167,7 +167,7 @@ RoomServiceOnDemand
 | Flow of events  | 1.The Manager initiates the addition of the cleaning option. <br />2.The Manager input the cleaning option name. <br />3.The Manager input the short description. <br />4.The Manager input the price. |
 | Post-conditions | The cleaning option data is added.                           |
 
-#####Update cleaning option 
+#### 16. Update cleaning option 
 
 | Use Case Name   | Update cleaning option                                       |
 | --------------- | ------------------------------------------------------------ |
@@ -176,7 +176,7 @@ RoomServiceOnDemand
 | Flow of events  | 1.The Manager selects the cleaning option from an existing set. <br />2.The Manager edits the cleaning option name. <br />3.The Manager edits the short description. <br />4.The Manager edits the price. |
 | Post-conditions | The cleaning option data is updated.                         |
 
-#####Remove cleaning option 
+#### 17. Remove cleaning option 
 
 | Use Case Name   | Remove cleaning option                                       |
 | --------------- | ------------------------------------------------------------ |
@@ -187,7 +187,7 @@ RoomServiceOnDemand
 
 ####Diagram: Detailed “Manage list of payment options” use case 
 
-#####Add payment option 
+#### 18. Add payment option 
 
 | Use Case Name   | Add payment option                                           |
 | --------------- | ------------------------------------------------------------ |
@@ -196,7 +196,7 @@ RoomServiceOnDemand
 | Flow of events  | 1.The Manager initiates the addition of the payment option. <br />2.The Manager input the payment option name. <br />3.The Manager input the short description. |
 | Post-conditions | The payment option data is added.                            |
 
-#####Update payment option 
+#### 19. Update payment option 
 
 | Use Case Name   | Update cleaning option                                       |
 | --------------- | ------------------------------------------------------------ |
@@ -205,7 +205,7 @@ RoomServiceOnDemand
 | Flow of events  | 1.The Manager selects the payment option from an existing set. <br />2.The Manager edits the payment option name. <br />3.The Manager edits the short description. |
 | Post-conditions | The payment option data is updated.                          |
 
-#####Remove payment option 
+#### 20. Remove payment option 
 
 | Use Case Name   | Remove payment option                                        |
 | --------------- | ------------------------------------------------------------ |
@@ -216,7 +216,7 @@ RoomServiceOnDemand
 
 ####Diagram: Detailed “Manage list of personnel options” use case 
 
-#####Add personnel option 
+#### 21. Add personnel option 
 
 | Use Case Name   | Add personnel option                                         |
 | --------------- | ------------------------------------------------------------ |
@@ -225,7 +225,7 @@ RoomServiceOnDemand
 | Flow of events  | 1.The Manager initiates the addition of the personnel option. <br />2.The Manager input the personnel option name. <br />3.The Manager input the short description. |
 | Post-conditions | The personnel option data is added.                          |
 
-#####Update personnel option 
+#### 22. Update personnel option 
 
 | Use Case Name   | Update personnel option                                      |
 | --------------- | ------------------------------------------------------------ |
@@ -234,7 +234,7 @@ RoomServiceOnDemand
 | Flow of events  | 1.The Manager selects the personnel option from an existing set. <br />2.The Manager edits the personnel option name. <br />3.The Manager edits the short description. |
 | Post-conditions | The personnel option data is updated.                        |
 
-#####Remove payment option 
+#### 23. Remove payment option 
 
 | Use Case Name   | Remove personnel option                                      |
 | --------------- | ------------------------------------------------------------ |
