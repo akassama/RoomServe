@@ -234,7 +234,7 @@ RoomServiceOnDemand
 | Flow of events  | 1.The Manager selects the personnel option from an existing set. <br />2.The Manager edits the personnel option name. <br />3.The Manager edits the short description. |
 | Post-conditions | The personnel option data is updated.                        |
 
-#### 23. Remove payment option 
+#### 23. Remove personnel option 
 
 | Use Case Name   | Remove personnel option                                      |
 | --------------- | ------------------------------------------------------------ |
